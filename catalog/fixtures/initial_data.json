@@ -1,0 +1,1386 @@
+[
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "AFETR",
+            "description": "Air Force Eastern Test Range, Florida, USA"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "AFWTR",
+            "description": "Air Force Western Test Range, California, USA"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "CAS",
+            "description": "Canaries Airspace"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "DLS",
+            "description": "Dombarovskiy Launch Site, Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "ERAS",
+            "description": "Eastern Range Airspace"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "FRGUI",
+            "description": "Europe's Spaceport, Kourou, French Guiana"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "HGSTR",
+            "description": "Hammaguira Space Track Range, Algeria"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "JSC",
+            "description": "Jiuquan Space Center, PRC"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "KODAK",
+            "description": "Kodiak Launch Complex, Alaska, USA"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "KSCUT",
+            "description": "Uchinoura Space Center, Japan (old Kagoshima Space Center—University of Tokyo, Japan)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "KWAJ",
+            "description": "US Army Kwajalein Atoll (USAKA)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "KYMSC",
+            "description": "Kapustin Yar Missile and Space Complex, Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "NSC",
+            "description": "Naro Space Complex, Republic of Korea"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "PLMSC",
+            "description": "Plesetsk Missile and Space Complex, Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SEAL",
+            "description": "Sea Launch Platform (mobile)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SEMLS",
+            "description": "Semnan Satellite Launch Site, Iran"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SNMLP",
+            "description": "San Marco Launch Platform, Indian Ocean (Kenya)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SRILR",
+            "description": "Satish Dhawan Space Centre, India (Formerly Sriharikota Launching Range)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SUBL",
+            "description": "Submarine Launch Platform (mobile), Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "SVOBO",
+            "description": "Svobodnyy Launch Complex, Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "TAISC",
+            "description": "Taiyuan Space Center, PRC"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "TANSC",
+            "description": "Tanegashima Space Center, Japan"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "TYMSC",
+            "description": "Tyuratam Missile and Space Center, Kazakhstan (Also known as Baikonur Cosmodrome)"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "VOSTO",
+            "description": "Vostochny Cosmodrome, Russia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "WLPIS",
+            "description": "Wallops Island, Virginia, USA"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "WOMRA",
+            "description": "Woomera, Australia"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "WRAS",
+            "description": "Western Range Airspace"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "WSC",
+            "description": "Wenchang Satellite Launch Center, PRC"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "XICLF",
+            "description": "Xichang Launch Facility, PRC"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "YAVNE",
+            "description": "Yavne Launch Facility, Israel"
+        }
+    },
+    {
+        "model": "catalog.LaunchSite",
+        "fields": {
+            "code": "YUN",
+            "description": "Yunsong Launch Site (Sohae Satellite Launching Station), Democratic People's Republic of Korea"
+        }
+    },
+
+
+
+
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "+",
+            "description": "Operational"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "-",
+            "description": "Nonoperational"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "P",
+            "description": "Partially Operational"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "B",
+            "description": "Backup/Standby"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "S",
+            "description": "Spare"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "X",
+            "description": "Extended Mission"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "D",
+            "description": "Decayed"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "?",
+            "description": "Unknown"
+        }
+    },
+    {
+        "model": "catalog.OperationalStatus",
+        "fields": {
+            "code": "U",
+            "description": "Operational"
+        }
+    },
+
+
+
+
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "AB",
+            "description": "Arab Satellite Communications Organization"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ABS",
+            "description": "Asia Broadcast Satellite"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "AC",
+            "description": "Asia Satellite Telecommunications Company (ASIASAT)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ALG",
+            "description": "Algeria"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ARGN",
+            "description": "Argentina"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ASRA",
+            "description": "Austria"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "AUS",
+            "description": "Australia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "AZER",
+            "description": "Azerbaijan"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "BEL",
+            "description": "Belgium"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "BELA",
+            "description": "Belarus"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "BERM",
+            "description": "Bermuda"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "BOL",
+            "description": "Bolivia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "BRAZ",
+            "description": "Brazil"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "CA",
+            "description": "Canada"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "CHBZ",
+            "description": "China/Brazil"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "CHLE",
+            "description": "Chile"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "CIS",
+            "description": "Commonwealth of Independent States (former USSR)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "COL",
+            "description": "Colombia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "CZCH",
+            "description": "Czech Republic (former Czechoslovakia)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "DEN",
+            "description": "Denmark"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ECU",
+            "description": "Ecuador"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "EGYP",
+            "description": "Egypt"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ESA",
+            "description": "European Space Agency"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ESRO",
+            "description": "European Space Research Organization"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "EST",
+            "description": "Estonia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "EUME",
+            "description": "European Organization for the Exploitation of Meteorological Satellites (EUMETSAT)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "EUTE",
+            "description": "European Telecommunications Satellite Organization (EUTELSAT)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "FGER",
+            "description": "France/Germany"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "FR",
+            "description": "France"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "FRIT",
+            "description": "France/Italy"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "GER",
+            "description": "Germany"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "GLOB",
+            "description": "Globalstar"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "GREC",
+            "description": "Greece"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "HUN",
+            "description": "Hungary"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IM",
+            "description": "International Mobile Satellite Organization (INMARSAT)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IND",
+            "description": "India"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "INDO",
+            "description": "Indonesia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IRAN",
+            "description": "Iran"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IRAQ",
+            "description": "Iraq"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IRID",
+            "description": "Iridium"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ISRA",
+            "description": "Israel"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ISRO",
+            "description": "Indian Space Research Organisation"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ISS",
+            "description": "International Space Station"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "IT",
+            "description": "Italy"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ITSO",
+            "description": "International Telecommunications Satellite Organization (INTELSAT)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "JPN",
+            "description": "Japan"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "KAZ",
+            "description": "Kazakhstan"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "LAOS",
+            "description": "Laos"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "LTU",
+            "description": "Lithuania"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "LUXE",
+            "description": "Luxembourg"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "MALA",
+            "description": "Malaysia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "MEX",
+            "description": "Mexico"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NATO",
+            "description": "North Atlantic Treaty Organization"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NETH",
+            "description": "Netherlands"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NICO",
+            "description": "New ICO"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NIG",
+            "description": "Nigeria"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NKOR",
+            "description": "Democratic People's Republic of Korea"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "NOR",
+            "description": "Norway"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "O3B",
+            "description": "O3b Networks"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ORB",
+            "description": "ORBCOMM"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "PAKI",
+            "description": "Pakistan"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "PERU",
+            "description": "Peru"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "POL",
+            "description": "Poland"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "POR",
+            "description": "Portugal"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "PRC",
+            "description": "People's Republic of China"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "PRES",
+            "description": "People's Republic of China/European Space Agency"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "RASC",
+            "description": "RascomStar-QAF"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ROC",
+            "description": "Taiwan (Republic of China)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "ROM",
+            "description": "Romania"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "RP",
+            "description": "Philippines (Republic of the Philippines)"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SAFR",
+            "description": "South Africa"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SAUD",
+            "description": "Saudi Arabia"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SEAL",
+            "description": "Sea Launch"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SES",
+            "description": "SES"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SING",
+            "description": "Singapore"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SKOR",
+            "description": "Republic of Korea"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SPN",
+            "description": "Spain"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "STCT",
+            "description": "Singapore/Taiwan"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SWED",
+            "description": "Sweden"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "SWTZ",
+            "description": "Switzerland"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "THAI",
+            "description": "Thailand"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "TMMC",
+            "description": "Turkmenistan/Monaco"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "TURK",
+            "description": "Turkey"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "UAE",
+            "description": "United Arab Emirates"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "UK",
+            "description": "United Kingdom"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "UKR",
+            "description": "Ukraine"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "URY",
+            "description": "Uruguay"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "US",
+            "description": "United States"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "USBZ",
+            "description": "United States/Brazil"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "VENZ",
+            "description": "Venezuela"
+        }
+    },
+    {
+        "model": "catalog.Source",
+        "fields": {
+            "code": "VTNM",
+            "description": "Vietnam"
+        }
+    },
+
+
+
+
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NCE",
+            "description": "No Current Elements"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NIE",
+            "description": "No Initial Elements"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NEA",
+            "description": "No Elements Available"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "DOC",
+            "description": "Permanently Docked"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "ISS",
+            "description": "Docked to International Space Station"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "AS0",
+            "description": "Asteroid Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "AS1",
+            "description": "Asteroid Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "AS2",
+            "description": "Asteroid Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "AS3",
+            "description": "Asteroid Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EA0",
+            "description": "Earth Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EA1",
+            "description": "Earth Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EA2",
+            "description": "Earth Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EA3",
+            "description": "Earth Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EL0",
+            "description": "Earth Lagrange Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EL1",
+            "description": "Earth Lagrange Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EL2",
+            "description": "Earth Lagrange Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EL3",
+            "description": "Earth Lagrange Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EM0",
+            "description": "Earth-Moon Barycenter Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EM1",
+            "description": "Earth-Moon Barycenter Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EM2",
+            "description": "Earth-Moon Barycenter Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "EM3",
+            "description": "Earth-Moon Barycenter Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "JU0",
+            "description": "Jupiter Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "JU1",
+            "description": "Jupiter Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "JU2",
+            "description": "Jupiter Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "JU3",
+            "description": "Jupiter Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MA0",
+            "description": "Mars Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MA1",
+            "description": "Mars Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MA2",
+            "description": "Mars Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MA3",
+            "description": "Mars Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "ME0",
+            "description": "Mercury Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "ME1",
+            "description": "Mercury Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "ME2",
+            "description": "Mercury Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "ME3",
+            "description": "Mercury Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MO0",
+            "description": "Moon (Earth) Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MO1",
+            "description": "Moon (Earth) Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MO2",
+            "description": "Moon (Earth) Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "MO3",
+            "description": "Moon (Earth) Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NE0",
+            "description": "Neptune Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NE1",
+            "description": "Neptune Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NE2",
+            "description": "Neptune Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "NE3",
+            "description": "Neptune Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "PL0",
+            "description": "Pluto Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "PL1",
+            "description": "Pluto Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "PL2",
+            "description": "Pluto Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "PL3",
+            "description": "Pluto Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SA0",
+            "description": "Saturn Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SA1",
+            "description": "Saturn Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SA2",
+            "description": "Saturn Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SA3",
+            "description": "Saturn Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SS0",
+            "description": "Solar System Escape Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SS1",
+            "description": "Solar System Escape Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SS2",
+            "description": "Solar System Escape Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SS3",
+            "description": "Solar System Escape Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SU0",
+            "description": "Sun Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SU1",
+            "description": "Sun Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SU2",
+            "description": "Sun Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "SU3",
+            "description": "Sun Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "UR0",
+            "description": "Uranus Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "UR1",
+            "description": "Uranus Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "UR2",
+            "description": "Uranus Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "UR3",
+            "description": "Uranus Roundtrip"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "VE0",
+            "description": "Venus Orbit"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "VE1",
+            "description": "Venus Landing"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "VE2",
+            "description": "Venus Impact"
+        }
+    },
+    {
+        "model": "catalog.OrbitalStatus",
+        "fields": {
+            "code": "VE3",
+            "description": "Venus Roundtrip"
+        }
+    }
+]
