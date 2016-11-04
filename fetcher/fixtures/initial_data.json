@@ -1,0 +1,458 @@
+[
+    {
+        "model": "fetcher.DataSource",
+        "pk": 1,
+        "fields": {
+            "type": "CAT",
+            "name": "Celestrak SatCat",
+            "url": "https://celestrak.com/pub/satcat.txt",
+            "comment": "Satellite Catalog from NORAD, via CelesTrak",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 2,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Space Stations",
+            "url": "https://celestrak.com/NORAD/elements/stations.txt",
+            "comment": "Space Station TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 3,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Iridium Constellation",
+            "url": "https://celestrak.com/NORAD/elements/iridium.txt",
+            "comment": "Iridium Constellation TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 4,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Amateur Radio",
+            "url": "https://celestrak.com/NORAD/elements/amateur.txt",
+            "comment": "Amateur Radio TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 5,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Weather Satellites",
+            "url": "https://celestrak.com/NORAD/elements/weather.txt",
+            "comment": "Weather satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 6,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - NOAA Satellites",
+            "url": "https://celestrak.com/NORAD/elements/noaa.txt",
+            "comment": "National Oceanographic and Atmospheric Administation satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 7,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - GOES",
+            "url": "https://celestrak.com/NORAD/elements/goes.txt",
+            "comment": "Geostationary Operational Environmental satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 9,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Earth Ressources",
+            "url": "https://celestrak.com/NORAD/elements/resource.txt",
+            "comment": "Earth Ressources satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 10,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - SARSAT",
+            "url": "https://celestrak.com/NORAD/elements/sarsat.txt",
+            "comment": "Search and Rescue satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 11,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Disaster Monitoring",
+            "url": "https://celestrak.com/NORAD/elements/dmc.txt",
+            "comment": "Disaster Monitoring satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 12,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - TDRSS",
+            "url": "https://celestrak.com/NORAD/elements/tdrss.txt",
+            "comment": "Tracking and Data Relay Satellite System satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 13,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - ARGOS Data Collection System",
+            "url": "https://celestrak.com/NORAD/elements/argos.txt",
+            "comment": "ARGOS Data Collection System satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 15,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Geostationary",
+            "url": "https://celestrak.com/NORAD/elements/geo.txt",
+            "comment": "Geostationary satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 16,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Intelsat Constellation",
+            "url": "https://celestrak.com/NORAD/elements/intelsat.txt",
+            "comment": "Intelsat constellation satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 18,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Gorizont",
+            "url": "https://celestrak.com/NORAD/elements/gorizont.txt",
+            "comment": "Gorizont satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 19,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Raduga",
+            "url": "https://celestrak.com/NORAD/elements/raduga.txt",
+            "comment": "Raduga satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 20,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - ORBCOMM",
+            "url": "https://celestrak.com/NORAD/elements/orbcomm.txt",
+            "comment": "ORBCOMM satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 21,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Molniya",
+            "url": "https://celestrak.com/NORAD/elements/molniya.txt",
+            "comment": "Molniya military communication satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 22,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Globalstar constellation",
+            "url": "https://celestrak.com/NORAD/elements/globalstar.txt",
+            "comment": "Globalstar constellation satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 23,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Experimental",
+            "url": "https://celestrak.com/NORAD/elements/x-comm.txt",
+            "comment": "Experimental satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 24,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Other Comm",
+            "url": "https://celestrak.com/NORAD/elements/other-comm.txt",
+            "comment": "Other communication satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 25,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - GPS Operational",
+            "url": "https://celestrak.com/NORAD/elements/gps-ops.txt",
+            "comment": "Global Positionning System operational satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 26,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Glonass Operational",
+            "url": "https://celestrak.com/NORAD/elements/glo-ops.txt",
+            "comment": "Glonass operational satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 27,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - BeiDou",
+            "url": "https://celestrak.com/NORAD/elements/beidou.txt",
+            "comment": "BeiDou navigation satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 28,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Galileo",
+            "url": "https://celestrak.com/NORAD/elements/galileo.txt",
+            "comment": "Galileo navigation system satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 29,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - SBAS",
+            "url": "https://celestrak.com/NORAD/elements/sbas.txt",
+            "comment": "Satellite Based Augmentatin System satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 30,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - NNSS",
+            "url": "https://celestrak.com/NORAD/elements/nnss.txt",
+            "comment": "Navy Navigation Satellite System satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 31,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Russian LEO Navigation",
+            "url": "https://celestrak.com/NORAD/elements/musson.txt",
+            "comment": "Russian Low Earth Orbit Navigation satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 32,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Space & Earth Science",
+            "url": "https://celestrak.com/NORAD/elements/science.txt",
+            "comment": "Space & Earth Science satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 33,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Geodetic",
+            "url": "https://celestrak.com/NORAD/elements/geodetic.txt",
+            "comment": "Geodetic satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 34,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Engineering",
+            "url": "https://celestrak.com/NORAD/elements/engineering.txt",
+            "comment": "Engineering satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 35,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Educational",
+            "url": "https://celestrak.com/NORAD/elements/education.txt",
+            "comment": "Educational satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 36,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Miscellaneous Military Satellites",
+            "url": "https://celestrak.com/NORAD/elements/military.txt",
+            "comment": "Miscellaneous Military satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 37,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Radar Calibration",
+            "url": "https://celestrak.com/NORAD/elements/radar.txt",
+            "comment": "Radar Calibration satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 38,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - CubeSats",
+            "url": "https://celestrak.com/NORAD/elements/cubesat.txt",
+            "comment": "CubeSats TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 39,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Other",
+            "url": "https://celestrak.com/NORAD/elements/other.txt",
+            "comment": "Other satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 40,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - Last 30 Days' launches",
+            "url": "https://celestrak.com/NORAD/elements/tle-new.txt",
+            "comment": "Last 30 Days' launch satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 41,
+        "fields": {
+            "type": "TLE",
+            "name": "CelesTrak - 100 Brightest",
+            "url": "https://celestrak.com/NORAD/elements/visual.txt",
+            "comment": "100 Brightests satellites TLEs",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "1970-01-01 00:00:00+00:00"
+        }
+    }
+]
