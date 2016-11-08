@@ -23,4 +23,6 @@ class DataSource(models.Model):
     comment = models.TextField()
     date_added = models.DateTimeField()
     last_time_checked = models.DateTimeField()
-    
+
+    def __str__(self):
+        return '%s (%s)' % (self.comment, self.type)
