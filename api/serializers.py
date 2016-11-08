@@ -89,6 +89,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = DataSource
         fields = (
+            'id',
             'type',
             'name',
             'url',
