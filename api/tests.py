@@ -6,7 +6,6 @@ from api.views import LaunchSiteViewSet, OperationalStatusViewSet, OrbitalStatus
 
 
 def is_correct_json(string):
-    print(string)
     """
         Check if the string is a well formed json
     """
