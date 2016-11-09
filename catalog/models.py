@@ -92,7 +92,10 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
-    decay_date = models.DateTimeField()
+    decay_date = models.DateTimeField(
+        blank=True,
+        null=True
+    )
     orbital_period = models.PositiveSmallIntegerField()
     inclination = models.DecimalField(
         max_digits=5,
@@ -121,10 +124,16 @@ class TLE(models.Model):
         verbose_name_plural = "Two Line Elements"
 
     first_line = models.CharField(
-        max_length=70
+        max_length=70,
+        null=True
     )
     second_line = models.CharField(
-        max_length=70
+        max_length=70,
+        null=True
+    )
+    third_line = models.CharField(
+        max_length=70,
+        default=""
     )
 
     satellite_number = models.ForeignKey(
