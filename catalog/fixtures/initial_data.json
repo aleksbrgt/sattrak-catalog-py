@@ -1382,5 +1382,29 @@
             "code": "VE3",
             "description": "Venus Roundtrip"
         }
+    },
+
+
+
+
+    {
+        "model": "catalog.CatalogEntry",
+        "fields": {
+            "international_designator": "1998-067A",
+            "norad_catalog_number": "2554",
+            "names": "ISS (ZARYA)",
+            "has_payload": false,
+            "operational_status_code": "+" ,
+            "owner": "ISS",
+            "launch_date": "1998-11-20 00:00:00+00:00",
+            "launch_site": "TYMSC",
+            "decay_date": "1970-01-01 00:00:00+00:00",
+            "orbital_period": 92.7,
+            "inclination": 51.6,
+            "apogee": 409,
+            "perigee": 399,
+            "radar_cross_section": 404.0612,
+            "orbital_status_code": null
+        }
     }
 ]

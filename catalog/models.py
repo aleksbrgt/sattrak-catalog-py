@@ -92,7 +92,10 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
-    decay_date = models.DateTimeField()
+    decay_date = models.DateTimeField(
+        blank=True,
+        null=True
+    )
     orbital_period = models.PositiveSmallIntegerField()
     inclination = models.DecimalField(
         max_digits=5,
