@@ -1,5 +1,10 @@
+# Django
 db.sqlite3
 
+# Python
 env/
 __pycache__
 *.pyc
+
+# Selenium
+geckodriver.log
