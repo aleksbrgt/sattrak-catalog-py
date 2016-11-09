@@ -63,6 +63,7 @@ class TLESerializer(serializers.ModelSerializer):
             'id',
             'first_line',
             'second_line',
+            'third_line',
             'satellite_number',
             'classification',
             'international_designator_year',

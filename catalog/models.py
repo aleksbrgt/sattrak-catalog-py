@@ -124,10 +124,16 @@ class TLE(models.Model):
         verbose_name_plural = "Two Line Elements"
 
     first_line = models.CharField(
-        max_length=70
+        max_length=70,
+        null=True
     )
     second_line = models.CharField(
-        max_length=70
+        max_length=70,
+        null=True
+    )
+    third_line = models.CharField(
+        max_length=70,
+        default=""
     )
 
     satellite_number = models.ForeignKey(

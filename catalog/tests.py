@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.db.utils import IntegrityError
 
-from .models import CatalogEntry
+from .models import CatalogEntry, TLE
 
 class CatalogTestCase(TestCase):
 
@@ -17,3 +17,6 @@ class CatalogTestCase(TestCase):
             entry.save()
         except IntegrityError:
             self.assertRaises(IntegrityError)
+
+    def test_tle_has_third_line_attribute(self):
+        self.assertTrue(hasattr(TLE, 'third_line'))
