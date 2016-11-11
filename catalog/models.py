@@ -207,4 +207,4 @@ class TLE(models.Model):
     second_checksum = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return self.satellite_number + '-' + self.set_number
+        return '%s:%i' % (self.satellite_number.international_designator , self.set_number)
