@@ -20,6 +20,7 @@ class ApiGetTestCase(TestCase):
 
     fixtures = [
         'initial_data',
+        'test_data',
     ]
 
     def setUp(self):

@@ -1,0 +1,52 @@
+[
+    {
+        "model": "catalog.CatalogEntry",
+        "fields": {
+            "international_designator": "1998-067A",
+            "norad_catalog_number": "2554",
+            "names": "ISS (ZARYA)",
+            "has_payload": false,
+            "operational_status_code": "+" ,
+            "owner": "ISS",
+            "launch_date": "1998-11-20 00:00:00+00:00",
+            "launch_site": "TYMSC",
+            "decay_date": "1970-01-01 00:00:00+00:00",
+            "orbital_period": 92.7,
+            "inclination": 51.6,
+            "apogee": 409,
+            "perigee": 399,
+            "radar_cross_section": 404.0612,
+            "orbital_status_code": null
+        }
+    },
+
+    {
+        "model": "catalog.TLE",
+        "fields": {
+            "id": 1,
+            "first_line": "ISS (ZARYA)",
+            "second_line": "1 25544U 98067A   16314.27765366  .00003233  00000-0  57183-4 0  9996",
+            "third_line": "2 25544  51.6438  54.4261 0007064 189.3566  21.9969 15.53566099 27550",
+            "satellite_number": "2554" ,
+            "classification": "U",
+            "international_designator_year": "98" ,
+            "international_designator_number": "067",
+            "international_designator_piece": "A",
+            "epoch_year": "16",
+            "epoch_day": 314.27765366,
+            "first_derivative_mean_motion": 0.00003233,
+            "second_derivative_mean_motion": 0,
+            "drag": 0.0057183,
+            "set_number": 999,
+            "first_checksum": 6 ,
+            "inclination": 51.6438,
+            "ascending_node": 54.4261,
+            "eccentricity": 0.0007064,
+            "perigee_argument": 189.3566,
+            "mean_anomaly": 21.9969,
+            "mean_motion": 15.53566099,
+            "revolution_number": 2775 ,
+            "second_checksum": 0
+        }
+    }
+]

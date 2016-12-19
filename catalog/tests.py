@@ -6,7 +6,8 @@ from .models import CatalogEntry, TLE
 class CatalogTestCase(TestCase):
 
     fixtures = [
-        'initial_data'
+        'initial_data',
+        'test_data',
     ]
 
     def test_catalog_entry_decay_date_accepts_null_value(self):
