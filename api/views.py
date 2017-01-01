@@ -1,4 +1,4 @@
-from rest_framework import routers, serializers, viewsets, pagination
+from rest_framework import viewsets, pagination
 
 from catalog.models import LaunchSite, OperationalStatus, OrbitalStatus, Source, CatalogEntry, TLE
 from fetcher.models import DataSource
@@ -12,32 +12,32 @@ class StandardResultSetPagination(pagination.PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 1000
 
-class LaunchSiteViewSet(viewsets.ModelViewSet):
+class LaunchSiteViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = LaunchSite.objects.all()
     serializer_class = LaunchSiteSerializer
 
-class OperationalStatusViewSet(viewsets.ModelViewSet):
+class OperationalStatusViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = OperationalStatus.objects.all()
     serializer_class = OperationalStatusSerializer
 
-class OrbitalStatusViewSet(viewsets.ModelViewSet):
+class OrbitalStatusViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = OrbitalStatus.objects.all()
     serializer_class = OrbitalStatusSerializer
 
-class SourceViewSet(viewsets.ModelViewSet):
+class SourceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Source.objects.all()
     serializer_class = SourceSerializer
 
-class CatalogEntryViewSet(viewsets.ModelViewSet):
+class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CatalogEntry.objects.all()
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
 
-class TLEViewSet(viewsets.ModelViewSet):
+class TLEViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TLE.objects.all()
     serializer_class = TLESerializer
     pagination_class = StandardResultSetPagination
 
-class DataSourceViewSet(viewsets.ModelViewSet):
+class DataSourceViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = DataSource.objects.all()
     serializer_class = DataSourceSerializer
