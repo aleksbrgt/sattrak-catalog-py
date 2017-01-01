@@ -3,7 +3,7 @@ from rest_framework import serializers
 from catalog.models import LaunchSite, OperationalStatus, OrbitalStatus, Source, CatalogEntry, TLE
 from fetcher.models import DataSource
 
-class LaunchSiteSerializer(serializers.ModelSerializer):
+class LaunchSiteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = LaunchSite
         fields = (
@@ -11,7 +11,7 @@ class LaunchSiteSerializer(serializers.ModelSerializer):
             'description',
         )
 
-class OperationalStatusSerializer(serializers.ModelSerializer):
+class OperationalStatusSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OperationalStatus
         fields = (
@@ -19,7 +19,7 @@ class OperationalStatusSerializer(serializers.ModelSerializer):
             'description',
         )
 
-class OrbitalStatusSerializer(serializers.ModelSerializer):
+class OrbitalStatusSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OrbitalStatus
         fields = (
@@ -27,7 +27,7 @@ class OrbitalStatusSerializer(serializers.ModelSerializer):
             'description',
         )
 
-class SourceSerializer(serializers.ModelSerializer):
+class SourceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Source
         fields = (
@@ -35,7 +35,7 @@ class SourceSerializer(serializers.ModelSerializer):
             'description',
         )
 
-class CatalogEntrySerializer(serializers.ModelSerializer):
+class CatalogEntrySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CatalogEntry
         fields = (
@@ -56,7 +56,7 @@ class CatalogEntrySerializer(serializers.ModelSerializer):
             'orbital_status_code',
         )
 
-class TLESerializer(serializers.ModelSerializer):
+class TLESerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TLE
         fields = (
@@ -86,7 +86,7 @@ class TLESerializer(serializers.ModelSerializer):
             'second_checksum',
         )
 
-class DataSourceSerializer(serializers.ModelSerializer):
+class DataSourceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DataSource
         fields = (
