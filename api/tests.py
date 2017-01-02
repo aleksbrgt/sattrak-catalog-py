@@ -1,5 +1,9 @@
 import json
+
 from django.test import TestCase
+from django.urls import reverse
+
+from rest_framework import status
 from rest_framework.test import APIRequestFactory
 
 from api.views import LaunchSiteViewSet, OperationalStatusViewSet, OrbitalStatusViewSet, SourceViewSet, CatalogEntryViewSet, TLEViewSet, DataSourceViewSet
@@ -9,6 +13,9 @@ def is_correct_json(string):
     """
         Check if the string is a well formed json
     """
+    if string[0] is not '{' and string[0] is not '[':
+        return False
+
     try:
         json.loads(string)
     except ValueError:
@@ -72,3 +79,31 @@ class ApiGetTestCase(TestCase):
             self.assertIn('"next":', json_data)
             self.assertIn('"previous":', json_data)
             self.assertIn('"results":', json_data)
+
+class ComputationTestCase(ApiGetTestCase):
+
+    fixtures = [
+        'initial_data',
+        'test_data',
+    ]
+
+    def test_access_current_data(self):
+        response = self.client.get('/api/catalogentry/2554/current_data/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_current_data_has_data(self):
+        response = self.client.get('/api/catalogentry/2554/current_data/')
+        content = response.content.decode('utf8')
+        expected_data = [
+            'elevation',
+            'longitude',
+            'latitude',
+            'velocity',
+        ]
+
+        self.assertTrue(is_correct_json(content))
+
+        json_data = json.loads(content)
+
+        for key in expected_data:
+            self.assertTrue(key in json_data)

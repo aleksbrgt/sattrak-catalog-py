@@ -1,8 +1,11 @@
 from rest_framework import viewsets, pagination
+from rest_framework.decorators import detail_route
+from rest_framework.response import Response
 
 from catalog.models import LaunchSite, OperationalStatus, OrbitalStatus, Source, CatalogEntry, TLE
 from fetcher.models import DataSource
 from .serializers import  DataSourceSerializer, LaunchSiteSerializer, OperationalStatusSerializer, OrbitalStatusSerializer, SourceSerializer, CatalogEntrySerializer, TLESerializer
+from .tools.compute import SatelliteComputation
 
 class StandardResultSetPagination(pagination.PageNumberPagination):
     """
@@ -32,6 +35,26 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CatalogEntry.objects.all()
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
+
+    @detail_route(methods=['get'])
+    def current_data(self, request, pk=None):
+        entry = self.get_object()
+
+        try:
+            tle = TLE.objects.filter(satellite_number = entry).order_by('epoch_year', 'epoch_day')[0]
+
+            data = SatelliteComputation(tle)
+            data.basic_compute()
+
+            return Response({
+                'elevation': data.elevation,
+                'latitude': data.latitude,
+                'longitude': data.longitude,
+                'velocity': data.velocity
+            })
+
+        except IndexError:
+            return Response([])
 
 class TLEViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TLE.objects.all()
