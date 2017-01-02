@@ -1,3 +1,7 @@
+"""
+    API views
+"""
+
 from datetime import datetime
 
 from rest_framework import viewsets, pagination, status
@@ -19,28 +23,46 @@ class StandardResultSetPagination(pagination.PageNumberPagination):
     max_page_size = 1000
 
 class LaunchSiteViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        LaunchSite API class view
+    """
     queryset = LaunchSite.objects.all()
     serializer_class = LaunchSiteSerializer
 
 class OperationalStatusViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        OperationalSatus API class view
+    """
     queryset = OperationalStatus.objects.all()
     serializer_class = OperationalStatusSerializer
 
 class OrbitalStatusViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        OrbitalStatus API class view
+    """
     queryset = OrbitalStatus.objects.all()
     serializer_class = OrbitalStatusSerializer
 
 class SourceViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        Source API class view
+    """
     queryset = Source.objects.all()
     serializer_class = SourceSerializer
 
 class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        CatalogEntry API class views
+    """
     queryset = CatalogEntry.objects.all()
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
 
     @detail_route(methods=['get'])
     def data(self, request, pk=None):
+        """
+            View returning basic positionning data
+        """
 
         # Get the corresponding CatalogEntry
         entry = self.get_object()
@@ -87,13 +109,19 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
             # PyEphem is restricting the range of validity of the TLEs
             return Response({'detail': '{0}'.format(err)},
                             status=status.HTTP_400_BAD_REQUEST
-                            )
+                           )
 
 class TLEViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        TLE API class view
+    """
     queryset = TLE.objects.all()
     serializer_class = TLESerializer
     pagination_class = StandardResultSetPagination
 
 class DataSourceViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+        DataSource API class view
+    """
     queryset = DataSource.objects.all()
     serializer_class = DataSourceSerializer

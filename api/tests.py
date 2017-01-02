@@ -81,6 +81,9 @@ class ApiGetTestCase(TestCase):
             self.assertIn('"results":', json_data)
 
 class ComputationTestCase(ApiGetTestCase):
+    """
+        Tests on the computation part of the api
+    """
 
     fixtures = [
         'initial_data',
@@ -88,10 +91,16 @@ class ComputationTestCase(ApiGetTestCase):
     ]
 
     def test_access_data(self):
+        """
+            Check if the route is working
+        """
         response = self.client.get('/api/catalogentry/2554/data/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_data_has_data(self):
+        """
+            Check if the page contains basic data
+        """
         response = self.client.get('/api/catalogentry/2554/data/')
         content = response.content.decode('utf8')
         expected_data = [
