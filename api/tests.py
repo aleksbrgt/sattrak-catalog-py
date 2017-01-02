@@ -87,12 +87,12 @@ class ComputationTestCase(ApiGetTestCase):
         'test_data',
     ]
 
-    def test_access_current_data(self):
-        response = self.client.get('/api/catalogentry/2554/current_data/')
+    def test_access_data(self):
+        response = self.client.get('/api/catalogentry/2554/data/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_current_data_has_data(self):
-        response = self.client.get('/api/catalogentry/2554/current_data/')
+    def test_data_has_data(self):
+        response = self.client.get('/api/catalogentry/2554/data/')
         content = response.content.decode('utf8')
         expected_data = [
             'elevation',

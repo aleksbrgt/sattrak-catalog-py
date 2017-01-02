@@ -1,4 +1,6 @@
-from rest_framework import viewsets, pagination
+from datetime import datetime
+
+from rest_framework import viewsets, pagination, status
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 
@@ -6,6 +8,7 @@ from catalog.models import LaunchSite, OperationalStatus, OrbitalStatus, Source,
 from fetcher.models import DataSource
 from .serializers import  DataSourceSerializer, LaunchSiteSerializer, OperationalStatusSerializer, OrbitalStatusSerializer, SourceSerializer, CatalogEntrySerializer, TLESerializer
 from .tools.compute import SatelliteComputation
+from .tools import dates as dateutils
 
 class StandardResultSetPagination(pagination.PageNumberPagination):
     """
@@ -37,24 +40,54 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = StandardResultSetPagination
 
     @detail_route(methods=['get'])
-    def current_data(self, request, pk=None):
+    def data(self, request, pk=None):
+
+        # Get the corresponding CatalogEntry
         entry = self.get_object()
 
+        given_time = request.GET.get('time', None)
+
+        time = datetime.utcnow()
+        if given_time is not None:
+            time = datetime.strptime(given_time, '%Y/%m/%d %H:%M:%S')
+
+        last_digits_year = str(time.year)[-2:]
+        day_fraction = dateutils.get_days(time)
+
+        tle = None
         try:
-            tle = TLE.objects.filter(satellite_number = entry).order_by('epoch_year', 'epoch_day')[0]
+            # The closest TLE for the satellite is picked, the TLE is always
+            # older than the requested time
+            tle = TLE.objects.filter(
+                epoch_year__lte=last_digits_year,
+                epoch_day__lte=day_fraction,
+                satellite_number=entry).order_by(
+                    'epoch_year',
+                    'epoch_day'
+                )[0]
 
-            data = SatelliteComputation(tle)
+        except IndexError:
+            return Response(
+                {'details': 'No TLE corresponding to the given date'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        data = SatelliteComputation(tle)
+        data.set_observer_time(time)
+
+        try:
             data.basic_compute()
-
             return Response({
                 'elevation': data.elevation,
                 'latitude': data.latitude,
                 'longitude': data.longitude,
                 'velocity': data.velocity
             })
-
-        except IndexError:
-            return Response([])
+        except ValueError as err:
+            # PyEphem is restricting the range of validity of the TLEs
+            return Response({'detail': '{0}'.format(err)},
+                            status=status.HTTP_400_BAD_REQUEST
+                            )
 
 class TLEViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TLE.objects.all()
