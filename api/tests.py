@@ -116,3 +116,31 @@ class ComputationTestCase(ApiGetTestCase):
 
         for key in expected_data:
             self.assertTrue(key in json_data)
+
+    def test_data_anterior_date(self):
+        """
+            Check if a query is not processed when the requested time is before
+            the TLE
+        """
+        response = self.client.get('/api/catalogentry/2554/data/?time=20161109010000')
+        content = response.content.decode('utf8')
+        json_data = json.loads(content)
+
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertTrue(is_correct_json(content))
+        self.assertTrue('details' in json_data)
+        self.assertEqual(json_data['details'], 'No TLE corresponding to the given date')
+
+    def test_data_out_of_range_date(self):
+        """
+            Check if a query is not processed when the requested time is too far
+            away from the TLE
+        """
+        response = self.client.get('/api/catalogentry/2554/data/?time=20180101080000')
+        content = response.content.decode('utf8')
+        json_data = json.loads(content)
+
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertTrue(is_correct_json(content))
+        self.assertTrue('details' in json_data)
+
