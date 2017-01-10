@@ -108,13 +108,14 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
                 'elevation': data.elevation,
                 'latitude': data.latitude,
                 'longitude': data.longitude,
-                'velocity': data.velocity
+                'velocity': data.velocity,
             })
         except ValueError as err:
             # PyEphem is restricting the range of validity of the TLEs
-            return Response({'detail': '{0}'.format(err)},
-                            status=status.HTTP_400_BAD_REQUEST
-                           )
+            return Response(
+                {'details': '{0}'.format(err)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 class TLEViewSet(viewsets.ReadOnlyModelViewSet):
     """
