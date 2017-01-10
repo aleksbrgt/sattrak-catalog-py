@@ -4,6 +4,8 @@
 
 from datetime import datetime
 
+from django.db.models import Q
+
 from rest_framework import viewsets, pagination, status
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
@@ -81,8 +83,11 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
             # The closest TLE for the satellite is picked, the TLE is always
             # older than the requested time
             tle = TLE.objects.filter(
-                epoch_year__lte=last_digits_year,
-                epoch_day__lte=day_fraction,
+                Q(epoch_year__lt=last_digits_year) |
+                Q(
+                    epoch_year=last_digits_year,
+                    epoch_day__lte=day_fraction,
+                ),
                 satellite_number=entry).order_by(
                     'epoch_year',
                     'epoch_day'
