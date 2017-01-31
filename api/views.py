@@ -105,10 +105,22 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
         try:
             data.basic_compute()
             return Response({
-                'elevation': data.elevation,
-                'latitude': data.latitude,
-                'longitude': data.longitude,
-                'velocity': data.velocity,
+                'data': {
+                    'date': time,
+                    'object': {
+                        'name': entry.names,
+                        'international_designator': entry.international_designator,
+                    },
+                    'tle': {
+                        'set_number': tle.set_number,
+                        'epoch_year': tle.epoch_year,
+                        'epoch_day': tle.epoch_day,
+                    },
+                },
+                'object_elevation': data.elevation,
+                'object_latitude': data.latitude,
+                'object_longitude': data.longitude,
+                'object_velocity': data.velocity,
             })
         except ValueError as err:
             # PyEphem is restricting the range of validity of the TLEs

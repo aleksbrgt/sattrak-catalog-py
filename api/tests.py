@@ -23,6 +23,16 @@ def is_correct_json(string):
 
     return True
 
+def crawl_json(json):
+    """
+        Retrieve all the keys in a json object
+    """
+    for key in json:
+        if type(json[key]) is dict:
+            for k in crawl_json(json[key]):
+                yield k
+        yield key
+
 class ApiGetTestCase(TestCase):
 
     fixtures = [
@@ -104,18 +114,28 @@ class ComputationTestCase(ApiGetTestCase):
         response = self.client.get('/api/catalogentry/2554/data/')
         content = response.content.decode('utf8')
         expected_data = [
-            'elevation',
-            'longitude',
-            'latitude',
-            'velocity',
+            'object_elevation',
+            'object_longitude',
+            'object_latitude',
+            'object_velocity',
+            'data',
+            'date',
+            'object',
+            'name',
+            'international_designator',
+            'tle',
+            'set_number',
+            'epoch_year',
+            'epoch_day',
         ]
 
         self.assertTrue(is_correct_json(content))
 
         json_data = json.loads(content)
+        json_keys = [key for key in crawl_json(json_data)]
 
         for key in expected_data:
-            self.assertTrue(key in json_data)
+            self.assertTrue(key in json_keys, "{} is not present".format(key))
 
     def test_data_anterior_date(self):
         """
