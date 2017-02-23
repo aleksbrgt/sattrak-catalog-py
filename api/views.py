@@ -73,10 +73,10 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
 
         time = datetime.utcnow()
         if given_time is not None:
-            time = datetime.strptime(given_time, '%Y%m%d%H%M%S')
+            time = dateutils.format_inline_time(given_time)
 
         last_digits_year = str(time.year)[-2:]
-        day_fraction = dateutils.get_days(time)
+        day_fraction = dateutils.date2fraction(time)
 
         tle = None
         try:
