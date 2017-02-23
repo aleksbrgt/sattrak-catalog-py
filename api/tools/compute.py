@@ -39,16 +39,28 @@ class SatelliteComputation():
         return math.sqrt((SatelliteComputation.G * SatelliteComputation.EARTH_MASS) / r)
 
     def set_observer_time(self, time):
+        """
+            Set the observer's time
+        """
         self._observer.date = time
 
     def set_observer_latitude(self, latitude):
+        """
+            Set the observer latitude
+        """
         self._observer.lat = latitude
 
     def set_observer_longitude(self, longitude):
+        """
+            Set the observer longitude
+        """
         self._observer.lon = longitude
 
     def set_observer_elevation(self, elevation):
-        sefl._observer.elevatation = elevatation
+        """
+            Set the observer elevation
+        """
+        self._observer.elevatation = elevatation
 
     def basic_compute(self):
         """
