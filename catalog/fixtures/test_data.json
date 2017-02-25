@@ -19,6 +19,26 @@
             "orbital_status_code": null
         }
     },
+    {
+        "model": "catalog.CatalogEntry",
+        "fields": {
+            "international_designator": "2011-053A",
+            "norad_catalog_number": "37820",
+            "names": "TIANGONG 1",
+            "has_payload": true,
+            "operational_status_code": "+" ,
+            "owner": "PRC",
+            "launch_date": "2011-09-29 00:00:00+00:00",
+            "launch_site": "JSC",
+            "decay_date": "1970-01-01 00:00:00+00:00",
+            "orbital_period": 91.5,
+            "inclination": 42.8,
+            "apogee": 363,
+            "perigee": 338,
+            "radar_cross_section": 21.2900,
+            "orbital_status_code": null
+        }
+    },
 
     {
         "model": "catalog.TLE",
@@ -46,6 +66,35 @@
             "mean_anomaly": 21.9969,
             "mean_motion": 15.53566099,
             "revolution_number": 2775 ,
+            "second_checksum": 0
+        }
+    },
+    {
+        "model": "catalog.TLE",
+        "fields": {
+            "id": 2,
+            "first_line": "TIANGONG 1",
+            "second_line": "1 37820U 11053A   17053.64321759  .00026360  00000-0  18787-3 0  9994",
+            "third_line": "2 37820  42.7606 178.5619 0018357 343.8440 204.1411 15.73042825309893",
+            "satellite_number": "37820" ,
+            "classification": "U",
+            "international_designator_year": "11" ,
+            "international_designator_number": "053",
+            "international_designator_piece": "A",
+            "epoch_year": "17",
+            "epoch_day": 53.64321759,
+            "first_derivative_mean_motion": 0.00026360,
+            "second_derivative_mean_motion": 0,
+            "drag": 0.000018787,
+            "set_number": 9994,
+            "first_checksum": 6,
+            "inclination": 42.7606,
+            "ascending_node": 178.5619,
+            "eccentricity": 0.0018357,
+            "perigee_argument": 343.8440,
+            "mean_anomaly": 204.1411,
+            "mean_motion": 15.73042825,
+            "revolution_number": 30989,
             "second_checksum": 0
         }
     }
