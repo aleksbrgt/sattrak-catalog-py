@@ -1,4 +1,9 @@
+import datetime
+import pytz
+
 from django.db import models
+
+from api.tools import dates as dateutils
 
 class LaunchSite(models.Model):
 
@@ -117,6 +122,26 @@ class CatalogEntry(models.Model):
     def __str__(self):
         return self.international_designator
 
+    def getValidTLE(self, time = None):
+        """
+            Return a tle matching the given time
+        """
+        if time is None:
+            time = datetime.utcnow()
+
+        time = time.replace(tzinfo=pytz.UTC)
+
+        tle = TLE.objects.filter(
+                models.Q(
+                    date_added__lte=time
+                ),
+                satellite_number=self
+            ).order_by(
+                '-date_added',
+            )[0]
+
+        return tle
+
 class TLE(models.Model):
 
     class Meta:
@@ -205,6 +230,9 @@ class TLE(models.Model):
     )
     revolution_number = models.PositiveIntegerField()
     second_checksum = models.PositiveSmallIntegerField()
+    date_added = models.DateTimeField(
+        null=True
+    )
 
     def __str__(self):
         return '%s:%i' % (self.satellite_number.international_designator , self.set_number)
