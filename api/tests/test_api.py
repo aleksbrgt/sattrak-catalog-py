@@ -156,7 +156,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is too far
             away from the TLE
         """
-        response = self.client.get('/api/catalogentry/2554/data/?time=20180101080000')
+        response = self.client.get('/api/catalogentry/2554/data/?time=21000101080000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
