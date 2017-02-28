@@ -43,7 +43,7 @@ class ApiGetTestCase(TestCase):
     def setUp(self):
         self.factory = APIRequestFactory()
 
-    def test_json_is_correct(self):
+    def test_jsonIsCorrect(self):
         """
             Test if basic GET views are returning a correctly formed JSON
         """
@@ -67,7 +67,7 @@ class ApiGetTestCase(TestCase):
 
             self.assertTrue(is_correct_json(response.content.decode('utf8')))
 
-    def test_json_has_pagination(self):
+    def test_jsonHasPagination(self):
         """
             Test if some views has a pagination system
         """
@@ -100,7 +100,7 @@ class ComputationTestCase(ApiGetTestCase):
         'test_data',
     ]
 
-    def test_access_data(self):
+    def test_accessData(self):
         """
             Check if the route is working
         """
@@ -137,7 +137,7 @@ class ComputationTestCase(ApiGetTestCase):
         for key in expected_data:
             self.assertTrue(key in json_keys, "{} is not present".format(key))
 
-    def test_data_anterior_date(self):
+    def test_dataAnteriorDate(self):
         """
             Check if a query is not processed when the requested time is before
             the TLE
@@ -151,7 +151,7 @@ class ComputationTestCase(ApiGetTestCase):
         self.assertTrue('details' in json_data)
         self.assertEqual(json_data['details'], 'No TLE corresponding to the given date')
 
-    def test_data_out_of_range_date(self):
+    def test_dataOutOfRangeDate(self):
         """
             Check if a query is not processed when the requested time is too far
             away from the TLE

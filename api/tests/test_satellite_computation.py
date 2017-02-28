@@ -11,7 +11,7 @@ class SatelliteComputationTestCase(TestCase):
         'test_data',
     ]
 
-    def test_orbital_velocity(self):
+    def test_orbitalVelocity(self):
         """
             Test the velocity calculation
         """

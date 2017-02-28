@@ -5,8 +5,6 @@
 import calendar
 from datetime import datetime, timedelta
 
-from catalog.models import TLE
-
 def format_inline_time(inline_time):
     return datetime.strptime(inline_time, '%Y%m%d%H%M%S')
 

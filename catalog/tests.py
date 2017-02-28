@@ -13,7 +13,7 @@ class CatalogTestCase(TestCase):
         'test_data',
     ]
 
-    def test_catalog_entry_decay_date_accepts_null_value(self):
+    def test_catalogEntryDecayDateAcceptsNullValue(self):
         entry = CatalogEntry.objects.get(norad_catalog_number='2554')
         entry.decay_date = None
 
@@ -22,7 +22,7 @@ class CatalogTestCase(TestCase):
         except IntegrityError:
             self.assertRaises(IntegrityError)
 
-    def test_tle_has_third_line_attribute(self):
+    def test_tleHasThirdLineAttribute(self):
         self.assertTrue(hasattr(TLE, 'third_line'))
 
     def test_tleHasDateAddedAttribute(self):
