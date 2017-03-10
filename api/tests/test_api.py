@@ -104,14 +104,14 @@ class ComputationTestCase(ApiGetTestCase):
         """
             Check if the route is working
         """
-        response = self.client.get('/api/catalogentry/2554/data/')
+        response = self.client.get('/api/catalogentry/25544/data/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_data_has_data(self):
         """
             Check if the page contains basic data
         """
-        response = self.client.get('/api/catalogentry/2554/data/')
+        response = self.client.get('/api/catalogentry/25544/data/')
         content = response.content.decode('utf8')
         expected_data = [
             'object_elevation',
@@ -142,7 +142,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is before
             the TLE
         """
-        response = self.client.get('/api/catalogentry/2554/data/?time=20161109010000')
+        response = self.client.get('/api/catalogentry/25544/data/?time=20161109010000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
@@ -156,7 +156,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is too far
             away from the TLE
         """
-        response = self.client.get('/api/catalogentry/2554/data/?time=21000101080000')
+        response = self.client.get('/api/catalogentry/25544/data/?time=21000101080000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
