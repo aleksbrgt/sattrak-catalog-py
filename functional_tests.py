@@ -24,11 +24,11 @@ class APITest(unittest.TestCase):
 
     def test_can_access_api_root_json(self):
 
-        # A client checks out the api
+        # A client check out the api,
         self.browser.get('http://localhost:8000/api?format=json')
 
+        # then check if the response is JSON
         json = self.browser.find_element_by_tag_name('pre').text
-        # It checks if the response is JSON
         self.assertTrue(self.is_correct_json(json))
 
         needed_content = [
@@ -39,7 +39,7 @@ class APITest(unittest.TestCase):
             'tle',
             'datasource',
         ]
-        # It check if correct data is available
+        # and if the correct data is available
         for element in needed_content:
             self.assertIn('api/%s/?format=json' % element, json)
 
@@ -47,11 +47,11 @@ class APITest(unittest.TestCase):
         # A user checks out the browsable API
         self.browser.get('http://localhost:8000/api?format=api')
 
-        # He checks the page's title
+        # then check the page's title
         self.assertIn('Api Root', self.browser.title)
-        # He checks if the response is HTML
-        self.assertIn('<body', self.browser.page_source)
 
+        # and if the content is html
+        self.assertIn('<body', self.browser.page_source)
         stripped = ''.join(self.browser.page_source.split())
         self.assertTrue(stripped.endswith('</html>'))
 
