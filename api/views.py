@@ -74,7 +74,10 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
             if given_time is not None:
                 time = dateutils.format_inline_time(given_time)
 
-            tle = entry.getValidTLE(time)
+            tle = TLE.objects.findByCatalogEntryAndTime(
+                entry, time
+            )
+
             data = SatelliteComputation(tle)
             data.set_observer_time(time)
             data.basic_compute()

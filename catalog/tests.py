@@ -37,5 +37,15 @@ class CatalogTestCase(TestCase):
         expected_tle_1 = TLE.objects.get(id=1)
         expected_tle_2 = TLE.objects.get(id=3)
 
-        self.assertTrue(expected_tle_1, entry.getValidTLE(time1))
-        self.assertTrue(expected_tle_2, entry.getValidTLE(time2))
+        self.assertTrue(
+            expected_tle_1,
+            TLE.objects.findByCatalogEntryAndTime(
+                entry, time1
+            )
+        )
+        self.assertTrue(
+            expected_tle_2,
+            TLE.objects.findByCatalogEntryAndTime(
+                entry, time2
+            )
+        )
