@@ -3,7 +3,7 @@ from rest_framework import serializers
 from catalog.models import LaunchSite, OperationalStatus, OrbitalStatus, Source, CatalogEntry, TLE
 from fetcher.models import DataSource
 
-class LaunchSiteSerializer(serializers.HyperlinkedModelSerializer):
+class LaunchSiteSerializer(serializers.ModelSerializer):
     class Meta:
         model = LaunchSite
         fields = (
@@ -11,7 +11,7 @@ class LaunchSiteSerializer(serializers.HyperlinkedModelSerializer):
             'description',
         )
 
-class OperationalStatusSerializer(serializers.HyperlinkedModelSerializer):
+class OperationalStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = OperationalStatus
         fields = (
@@ -19,7 +19,7 @@ class OperationalStatusSerializer(serializers.HyperlinkedModelSerializer):
             'description',
         )
 
-class OrbitalStatusSerializer(serializers.HyperlinkedModelSerializer):
+class OrbitalStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrbitalStatus
         fields = (
@@ -27,7 +27,7 @@ class OrbitalStatusSerializer(serializers.HyperlinkedModelSerializer):
             'description',
         )
 
-class SourceSerializer(serializers.HyperlinkedModelSerializer):
+class SourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Source
         fields = (
@@ -35,7 +35,12 @@ class SourceSerializer(serializers.HyperlinkedModelSerializer):
             'description',
         )
 
-class CatalogEntrySerializer(serializers.HyperlinkedModelSerializer):
+class CatalogEntrySerializer(serializers.ModelSerializer):
+    owner = SourceSerializer()
+    launch_site = LaunchSiteSerializer()
+    orbital_status_code = OrbitalStatusSerializer()
+    operational_status_code = OperationalStatusSerializer()
+
     class Meta:
         model = CatalogEntry
         fields = (
@@ -56,7 +61,10 @@ class CatalogEntrySerializer(serializers.HyperlinkedModelSerializer):
             'orbital_status_code',
         )
 
-class TLESerializer(serializers.HyperlinkedModelSerializer):
+class TLESerializer(serializers.ModelSerializer):
+    classification = OperationalStatusSerializer()
+    satellite_number = CatalogEntrySerializer()
+
     class Meta:
         model = TLE
         fields = (
@@ -86,7 +94,7 @@ class TLESerializer(serializers.HyperlinkedModelSerializer):
             'second_checksum',
         )
 
-class DataSourceSerializer(serializers.HyperlinkedModelSerializer):
+class DataSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = DataSource
         fields = (
