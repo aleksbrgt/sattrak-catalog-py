@@ -148,8 +148,8 @@ class ComputationTestCase(ApiGetTestCase):
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertTrue(is_correct_json(content))
-        self.assertTrue('details' in json_data)
-        self.assertEqual(json_data['details'], 'No TLE corresponding to the given date')
+        self.assertTrue('detail' in json_data)
+        self.assertEqual(json_data['detail'], 'No TLE corresponding to the given date.')
 
     def test_dataOutOfRangeDate(self):
         """
@@ -162,5 +162,5 @@ class ComputationTestCase(ApiGetTestCase):
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertTrue(is_correct_json(content))
-        self.assertTrue('details' in json_data)
+        self.assertTrue('detail' in json_data)
 
