@@ -72,3 +72,29 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
                 {'detail': '{0}'.format(err)},
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+    @detail_route(methods=['get'])
+    def tle(self, request, pk=None):
+        """
+            Return a TLE matching the given time if any, otherwise the latest
+            TLE is shown
+        """
+
+        entry = self.get_object()
+        time = datetime.utcnow()
+        given_time = request.GET.get('time', None)
+
+        try:
+            if given_time is not None:
+                time = dateutils.format_inline_time(given_time)
+
+            tle = TLE.objects.findByCatalogEntryAndTime(entry, time)
+            serializer = TLESerializer(tle)
+
+            return Response(serializer.data)
+
+        except IndexError:
+            return Response(
+                {'detail': 'No TLE corresponding to the given date.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )

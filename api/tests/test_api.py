@@ -164,3 +164,35 @@ class ComputationTestCase(ApiGetTestCase):
         self.assertTrue(is_correct_json(content))
         self.assertTrue('detail' in json_data)
 
+    def test_getTLEFromCatalogEntryIsReachable(self):
+        """
+            Check if the request returns a correct JSON
+        """
+
+        response = self.client.get('/api/catalogentry/25544/tle/?time=20170401080000')
+        content = response.content.decode('utf8')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        json_data = json.loads(content)
+        self.assertTrue(is_correct_json(content))
+
+    def test_getTLEFromCatalogEntryHasTLE(self):
+        """
+            Check if the request returns a TLE
+        """
+
+        response = self.client.get('/api/catalogentry/25544/tle/?time=20170401080000')
+        content = response.content.decode('utf8')
+        json_data = json.loads(content)
+
+        expected_data = {
+            'id': 4,
+            'first_line': 'ISS (ZARYA)',
+            'second_line': '1 25544U 98067A   17059.83075553  .00002893  00000-0  50327-4 0  9991',
+        }
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        for key, value in expected_data.items():
+            self.assertTrue(key in json_data)
+            self.assertEquals(json_data[key], value)
