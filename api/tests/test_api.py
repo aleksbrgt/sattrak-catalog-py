@@ -90,6 +90,68 @@ class ApiGetTestCase(TestCase):
             self.assertIn('"previous":', json_data)
             self.assertIn('"results":', json_data)
 
+    def test_listCatalogEntriesWithFilters(self):
+        """
+            Check if filters in urls are working
+        """
+
+        to_check_basic = {
+            'has_payload': True,
+            'has_payload': False,
+        }
+
+        to_check_child = {
+            'owner': 'ISS',
+            'owner': 'PRC',
+            'launch_site': 'TYMSC',
+            'launch_site': 'JSC',
+            'operational_status_code': '+',
+        }
+
+        for field, value in to_check_basic.items():
+            response = self.client.get(
+                '/api/catalogentry/?{}={}'.format(field, value)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)
+
+            for result in json_data['results']:
+                self.assertEqual(json_data['results'][0][field], value)
+
+        for field, value in to_check_child.items():
+            response = self.client.get(
+                '/api/catalogentry/?{}={}'.format(field, value)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)
+
+            for result in json_data['results']:
+                self.assertEqual(json_data['results'][0][field]['code'], value)
+
+    def test_listCatalogEntriesWithSortFilters(self):
+        """
+            Check if filters in urls are working
+        """
+        expected_orders = {
+            'launch_date': ['25544', '37820'],
+            '-launch_date': ['37820', '25544'],
+            'norad_catalog_number': ['25544', '37820'],
+            '-norad_catalog_number': ['37820', '25544'],
+        }
+
+        for param, order in expected_orders.items():
+            response = self.client.get(
+                '/api/catalogentry/?ordering={}'.format(param)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)
+
+            for i in range(len(order)):
+                self.assertEqual(
+                    json_data['results'][i]['norad_catalog_number'],
+                    order[i]
+                )
+
 class ComputationTestCase(ApiGetTestCase):
     """
         Tests on the computation part of the api
@@ -195,4 +257,4 @@ class ComputationTestCase(ApiGetTestCase):
 
         for key, value in expected_data.items():
             self.assertTrue(key in json_data)
-            self.assertEquals(json_data[key], value)
+            self.assertEqual(json_data[key], value)

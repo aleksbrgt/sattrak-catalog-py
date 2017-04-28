@@ -1,8 +1,10 @@
 from datetime import datetime
 
+import django_filters
 from rest_framework import viewsets, status
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
+from rest_framework import filters
 
 from catalog.models import CatalogEntry, TLE
 from api.serializers import CatalogEntrySerializer, TLESerializer
@@ -19,6 +21,20 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CatalogEntry.objects.all()
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
+
+    filter_backends = (filters.DjangoFilterBackend,filters.OrderingFilter,)
+    filter_fields = (
+        'has_payload',
+        'owner',
+        'launch_site',
+        'operational_status_code',
+        'orbital_status_code',
+    )
+    ordering_fields = (
+        'norad_catalog_number',
+        'launch_date',
+        'decay_date',
+    )
 
     @detail_route(methods=['get'])
     def data(self, request, pk=None):
