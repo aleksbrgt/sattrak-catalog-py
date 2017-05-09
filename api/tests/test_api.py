@@ -124,7 +124,7 @@ class ApiGetTestCase(TestCase):
             'owner': 'PRC',
             'launch_site': 'TYMSC',
             'launch_site': 'JSC',
-            'operational_status_code': '+',
+            'operational_status': '+',
         }
 
         for field, value in to_check_basic.items():
