@@ -90,6 +90,25 @@ class ApiGetTestCase(TestCase):
             self.assertIn('"previous":', json_data)
             self.assertIn('"results":', json_data)
 
+    def test_listingCatalogEntriesWithLimit(self):
+        """
+            Check if the limit parameter is working
+        """
+        expected_results = {
+            '': 2,
+            '?limit=1': 2,
+        }
+
+        for search, expected in expected_results.items():
+            response = self.client.get(
+                '/api/catalogentry/{}'.format(search)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)
+            result = json_data['count']
+
+            self.assertEqual(result, expected)
+
     def test_listCatalogEntriesWithFilters(self):
         """
             Check if filters in urls are working
@@ -105,7 +124,7 @@ class ApiGetTestCase(TestCase):
             'owner': 'PRC',
             'launch_site': 'TYMSC',
             'launch_site': 'JSC',
-            'operational_status_code': '+',
+            'operational_status': '+',
         }
 
         for field, value in to_check_basic.items():
@@ -151,6 +170,61 @@ class ApiGetTestCase(TestCase):
                     json_data['results'][i]['norad_catalog_number'],
                     order[i]
                 )
+
+    def test_listCatalogEntriesWithComplexFilters(self):
+        """
+            Check if the more complex filters are working
+        """
+
+        expected_results = {
+            '?norad_catalog_number__in=25544%2C25545': ['25544'],
+            '?norad_catalog_number__startswith=255': ['25544'],
+            '?owner__description__startswith=international': ['25544'],
+            '?owner__operational_status__startswith=Operational&international_designator__startswith=2011-': ['37820'],
+        }
+
+        for search, expected in expected_results.items():
+            response = self.client.get(
+                '/api/catalogentry/{}'.format(search)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)['results']
+
+            results = []
+
+            for data in json_data:
+                results.append(data['norad_catalog_number'])
+
+            self.assertEqual(results, expected)
+
+    def test_listCatalogEntriesWithSearchFilters(self):
+        """
+            Check if the search filter is working corrently
+        """
+        expected_results = {
+            '25544': ['25544'],
+            'zarya': ['25544'],
+            'international+space+station': ['25544'],
+            'china': ['37820'],
+            'jiuquan': ['37820'],
+            'tiangong': ['37820'],
+            'operational': ['25544', '37820'],
+            'earth+orbit': ['25544', '37820'],
+        }
+
+        for search, expected in expected_results.items():
+            response = self.client.get(
+                '/api/catalogentry/?search={}'.format(search)
+            )
+            content = response.content.decode('utf8')
+            json_data = json.loads(content)['results']
+
+            results = []
+
+            for data in json_data:
+                results.append(data['norad_catalog_number'])
+
+            self.assertEqual(results, expected)
 
 class ComputationTestCase(ApiGetTestCase):
     """

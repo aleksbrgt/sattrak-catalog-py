@@ -6,13 +6,16 @@ from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from rest_framework import filters
 
+from rest_framework_filters import backends
+
 from catalog.models import CatalogEntry, TLE
 from api.serializers import CatalogEntrySerializer, TLESerializer
 
 from api.tools.compute import SatelliteComputation
 from api.tools import dates as dateutils
 
-from . import StandardResultSetPagination
+from api.views import StandardResultSetPagination
+from api.views import CatalogEntryFilter
 
 class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -22,19 +25,27 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
 
-    filter_backends = (filters.DjangoFilterBackend,filters.OrderingFilter,)
-    filter_fields = (
-        'has_payload',
-        'owner',
-        'launch_site',
-        'operational_status_code',
-        'orbital_status_code',
+    filter_backends = (
+        backends.DjangoFilterBackend,
+        filters.OrderingFilter,
+        filters.SearchFilter,
     )
-    ordering_fields = (
+    filter_class = CatalogEntryFilter
+
+    search_fields = (
+        'international_designator',
         'norad_catalog_number',
+        'names',
         'launch_date',
         'decay_date',
+        'owner__code',
+        'owner__description',
+        'launch_site__code',
+        'launch_site__description',
+        'operational_status__description',
+        'orbital_status__description',
     )
+
 
     @detail_route(methods=['get'])
     def data(self, request, pk=None):

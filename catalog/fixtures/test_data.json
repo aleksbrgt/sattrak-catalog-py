@@ -6,7 +6,7 @@
             "norad_catalog_number": "25544",
             "names": "ISS (ZARYA)",
             "has_payload": false,
-            "operational_status_code": "+",
+            "operational_status": "+",
             "owner": "ISS",
             "launch_date": "1998-11-20 00:00:00+00:00",
             "launch_site": "TYMSC",
@@ -16,7 +16,7 @@
             "apogee": 409,
             "perigee": 399,
             "radar_cross_section": 404.0612,
-            "orbital_status_code": null
+            "orbital_status": "EA0"
         }
     },
     {
@@ -26,7 +26,7 @@
             "norad_catalog_number": "37820",
             "names": "TIANGONG 1",
             "has_payload": true,
-            "operational_status_code": "+",
+            "operational_status": "+",
             "owner": "PRC",
             "launch_date": "2011-09-29 00:00:00+00:00",
             "launch_site": "JSC",
@@ -36,7 +36,7 @@
             "apogee": 363,
             "perigee": 338,
             "radar_cross_section": 21.2900,
-            "orbital_status_code": null
+            "orbital_status": "EA0"
         }
     },
     {

@@ -38,8 +38,8 @@ class SourceSerializer(serializers.ModelSerializer):
 class CatalogEntrySerializer(serializers.ModelSerializer):
     owner = SourceSerializer()
     launch_site = LaunchSiteSerializer()
-    orbital_status_code = OrbitalStatusSerializer()
-    operational_status_code = OperationalStatusSerializer()
+    orbital_status = OrbitalStatusSerializer()
+    operational_status = OperationalStatusSerializer()
 
     class Meta:
         model = CatalogEntry
@@ -48,7 +48,7 @@ class CatalogEntrySerializer(serializers.ModelSerializer):
             'norad_catalog_number',
             'names',
             'has_payload',
-            'operational_status_code',
+            'operational_status',
             'owner',
             'launch_date',
             'launch_site',
@@ -58,7 +58,7 @@ class CatalogEntrySerializer(serializers.ModelSerializer):
             'apogee',
             'perigee',
             'radar_cross_section',
-            'orbital_status_code',
+            'orbital_status',
         )
 
 class TLESerializer(serializers.ModelSerializer):

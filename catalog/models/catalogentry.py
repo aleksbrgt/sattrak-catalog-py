@@ -14,12 +14,12 @@ class CatalogEntry(models.Model):
         unique=True
     )
     norad_catalog_number = models.CharField(
-        max_length=4,
+        max_length=5,
         primary_key=True
     )
     names = models.CharField(max_length=255)
     has_payload = models.BooleanField(default=False)
-    operational_status_code = models.ForeignKey(
+    operational_status = models.ForeignKey(
         "OperationalStatus",
         models.SET_NULL,
         blank=True,
@@ -42,7 +42,7 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
-    orbital_period = models.PositiveSmallIntegerField()
+    orbital_period = models.PositiveIntegerField()
     inclination = models.DecimalField(
         max_digits=5,
         decimal_places=2
@@ -53,7 +53,7 @@ class CatalogEntry(models.Model):
         max_digits=7,
         decimal_places=4
     )
-    orbital_status_code = models.ForeignKey(
+    orbital_status = models.ForeignKey(
         "OrbitalStatus",
         models.SET_NULL,
         blank=True,

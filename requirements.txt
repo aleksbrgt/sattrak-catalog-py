@@ -4,3 +4,4 @@ pyephem==3.7.6.0
 pytz==2016.10
 selenium==2.53.6
 django-filter==1.0.2
+django-dotenv==1.4.1
