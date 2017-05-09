@@ -22,7 +22,11 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CatalogEntrySerializer
     pagination_class = StandardResultSetPagination
 
-    filter_backends = (filters.DjangoFilterBackend,filters.OrderingFilter,)
+    filter_backends = (
+        filters.DjangoFilterBackend,
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    )
     filter_fields = (
         'has_payload',
         'owner',
@@ -32,6 +36,13 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
     )
     ordering_fields = (
         'norad_catalog_number',
+        'launch_date',
+        'decay_date',
+    )
+    search_fields = (
+        'international_designator',
+        'norad_catalog_number',
+        'names',
         'launch_date',
         'decay_date',
     )
