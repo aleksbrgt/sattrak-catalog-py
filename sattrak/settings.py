@@ -37,8 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'django_filters',
+    'rest_framework',
     'catalog',
     'fetcher',
     'api',
@@ -54,6 +54,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS':(
+        'rest_framework_filters.backends.DjangoFilterBackend',
+    ),
+}
 
 ROOT_URLCONF = 'sattrak.urls'
 
