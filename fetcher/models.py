@@ -12,13 +12,20 @@ class DataSource(models.Model):
     type = models.CharField(
         max_length = 3,
         choices = TYPE_CHOICES,
-        default = CATALOG
+        default = CATALOG,
     )
     name = models.CharField(
-        max_length=255
+        max_length=255,
+    )
+    system_name = models.CharField(
+        max_length=255,
+        unique=True,
+        blank=False,
+        null=True,
+        default=None
     )
     url = models.CharField(
-        max_length=255
+        max_length=255,
     )
     comment = models.TextField()
     date_added = models.DateTimeField()

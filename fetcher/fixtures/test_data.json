@@ -1,0 +1,15 @@
+[
+    {
+        "model": "fetcher.DataSource",
+        "pk": 42,
+        "fields": {
+            "type": "CAT",
+            "name": "TEST SATCAT",
+            "system_name": "cat_test",
+            "url": "https://foobar.foobar/dummy_catalog.txt",
+            "comment": "TEST SATCAT",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "2016-10-19 21:45:20+00:00"
+        }
+    }
+]

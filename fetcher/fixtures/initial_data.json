@@ -5,6 +5,7 @@
         "fields": {
             "type": "CAT",
             "name": "Celestrak SatCat",
+            "system_name": "cat_norad",
             "url": "https://celestrak.com/pub/satcat.txt",
             "comment": "Satellite Catalog from NORAD, via CelesTrak",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -17,6 +18,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Space Stations",
+            "system_name": "tle_spacestations",
             "url": "https://celestrak.com/NORAD/elements/stations.txt",
             "comment": "Space Station",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -29,6 +31,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Iridium Constellation",
+            "system_name": "tle_iridium",
             "url": "https://celestrak.com/NORAD/elements/iridium.txt",
             "comment": "Iridium Constellation",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -41,6 +44,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Amateur Radio",
+            "system_name": "tle_radio",
             "url": "https://celestrak.com/NORAD/elements/amateur.txt",
             "comment": "Amateur Radio",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -53,6 +57,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Weather Satellites",
+            "system_name": "tle_weather",
             "url": "https://celestrak.com/NORAD/elements/weather.txt",
             "comment": "Weather satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -65,6 +70,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - NOAA Satellites",
+            "system_name": "tle_noaa",
             "url": "https://celestrak.com/NORAD/elements/noaa.txt",
             "comment": "National Oceanographic and Atmospheric Administation satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -77,6 +83,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - GOES",
+            "system_name": "tle_goes",
             "url": "https://celestrak.com/NORAD/elements/goes.txt",
             "comment": "Geostationary Operational Environmental satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -89,6 +96,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Earth Ressources",
+            "system_name": "tle_earthresources",
             "url": "https://celestrak.com/NORAD/elements/resource.txt",
             "comment": "Earth Ressources satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -101,6 +109,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - SARSAT",
+            "system_name": "tle_sarsat",
             "url": "https://celestrak.com/NORAD/elements/sarsat.txt",
             "comment": "Search and Rescue satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -113,6 +122,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Disaster Monitoring",
+            "system_name": "tle_disaster",
             "url": "https://celestrak.com/NORAD/elements/dmc.txt",
             "comment": "Disaster Monitoring satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -125,6 +135,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - TDRSS",
+            "system_name": "tle_tdrss",
             "url": "https://celestrak.com/NORAD/elements/tdrss.txt",
             "comment": "Tracking and Data Relay Satellite System satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -137,6 +148,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - ARGOS Data Collection System",
+            "system_name": "tle_argos",
             "url": "https://celestrak.com/NORAD/elements/argos.txt",
             "comment": "ARGOS Data Collection System satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -149,6 +161,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Geostationary",
+            "system_name": "tle_geostationary",
             "url": "https://celestrak.com/NORAD/elements/geo.txt",
             "comment": "Geostationary satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -161,6 +174,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Intelsat Constellation",
+            "system_name": "tle_intelsat",
             "url": "https://celestrak.com/NORAD/elements/intelsat.txt",
             "comment": "Intelsat constellation satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -173,6 +187,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Gorizont",
+            "system_name": "tle_gorizont",
             "url": "https://celestrak.com/NORAD/elements/gorizont.txt",
             "comment": "Gorizont satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -185,6 +200,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Raduga",
+            "system_name": "tle_raduga",
             "url": "https://celestrak.com/NORAD/elements/raduga.txt",
             "comment": "Raduga satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -197,6 +213,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - ORBCOMM",
+            "system_name": "tle_orbcomm",
             "url": "https://celestrak.com/NORAD/elements/orbcomm.txt",
             "comment": "ORBCOMM satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -209,6 +226,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Molniya",
+            "system_name": "tle_molniya",
             "url": "https://celestrak.com/NORAD/elements/molniya.txt",
             "comment": "Molniya military communication satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -221,6 +239,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Globalstar constellation",
+            "system_name": "tle_globalstar",
             "url": "https://celestrak.com/NORAD/elements/globalstar.txt",
             "comment": "Globalstar constellation satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -233,6 +252,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Experimental",
+            "system_name": "tle_experimental",
             "url": "https://celestrak.com/NORAD/elements/x-comm.txt",
             "comment": "Experimental satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -245,6 +265,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Other Comm",
+            "system_name": "tle_othercomm",
             "url": "https://celestrak.com/NORAD/elements/other-comm.txt",
             "comment": "Other communication satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -257,6 +278,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - GPS Operational",
+            "system_name": "tle_opgps",
             "url": "https://celestrak.com/NORAD/elements/gps-ops.txt",
             "comment": "Global Positionning System operational satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -269,6 +291,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Glonass Operational",
+            "system_name": "tle_opglonass",
             "url": "https://celestrak.com/NORAD/elements/glo-ops.txt",
             "comment": "Glonass operational satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -281,6 +304,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - BeiDou",
+            "system_name": "tle_beidou",
             "url": "https://celestrak.com/NORAD/elements/beidou.txt",
             "comment": "BeiDou navigation satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -293,6 +317,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Galileo",
+            "system_name": "tle_galileo",
             "url": "https://celestrak.com/NORAD/elements/galileo.txt",
             "comment": "Galileo navigation system satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -305,6 +330,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - SBAS",
+            "system_name": "tle_sbas",
             "url": "https://celestrak.com/NORAD/elements/sbas.txt",
             "comment": "Satellite Based Augmentatin System satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -317,6 +343,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - NNSS",
+            "system_name": "tle_nnss",
             "url": "https://celestrak.com/NORAD/elements/nnss.txt",
             "comment": "Navy Navigation Satellite System satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -329,6 +356,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Russian LEO Navigation",
+            "system_name": "tle_leo",
             "url": "https://celestrak.com/NORAD/elements/musson.txt",
             "comment": "Russian Low Earth Orbit Navigation satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -341,6 +369,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Space & Earth Science",
+            "system_name": "tle_science",
             "url": "https://celestrak.com/NORAD/elements/science.txt",
             "comment": "Space & Earth Science satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -353,6 +382,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Geodetic",
+            "system_name": "tle_geodetic",
             "url": "https://celestrak.com/NORAD/elements/geodetic.txt",
             "comment": "Geodetic satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -365,6 +395,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Engineering",
+            "system_name": "tle_engineering",
             "url": "https://celestrak.com/NORAD/elements/engineering.txt",
             "comment": "Engineering satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -377,6 +408,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Educational",
+            "system_name": "tle_educational",
             "url": "https://celestrak.com/NORAD/elements/education.txt",
             "comment": "Educational satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -389,6 +421,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Miscellaneous Military Satellites",
+            "system_name": "tle_miscmilitary",
             "url": "https://celestrak.com/NORAD/elements/military.txt",
             "comment": "Miscellaneous Military satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -401,6 +434,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Radar Calibration",
+            "system_name": "tle_radarcalibration",
             "url": "https://celestrak.com/NORAD/elements/radar.txt",
             "comment": "Radar Calibration satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -413,6 +447,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - CubeSats",
+            "system_name": "tle_cubesat",
             "url": "https://celestrak.com/NORAD/elements/cubesat.txt",
             "comment": "CubeSats",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -425,6 +460,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Other",
+            "system_name": "tle_other",
             "url": "https://celestrak.com/NORAD/elements/other.txt",
             "comment": "Other satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -437,6 +473,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - Last 30 Days' launches",
+            "system_name": "tle_last30days",
             "url": "https://celestrak.com/NORAD/elements/tle-new.txt",
             "comment": "Last 30 Days' launch satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
@@ -449,6 +486,7 @@
         "fields": {
             "type": "TLE",
             "name": "CelesTrak - 100 Brightest",
+            "system_name": "tle_100brightest",
             "url": "https://celestrak.com/NORAD/elements/visual.txt",
             "comment": "100 Brightests satellites",
             "date_added": "2016-10-19 21:45:20+00:00",
