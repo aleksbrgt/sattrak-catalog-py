@@ -8,3 +8,5 @@ __pycache__
 
 # Selenium
 geckodriver.log
+
+.env
