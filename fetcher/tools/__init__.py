@@ -1,0 +1,1 @@
+from .satcatparser import SatcatParser
