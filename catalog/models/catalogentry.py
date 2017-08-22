@@ -17,8 +17,14 @@ class CatalogEntry(models.Model):
         max_length=5,
         primary_key=True
     )
-    names = models.CharField(max_length=255)
-    has_payload = models.BooleanField(default=False)
+    names = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+    has_payload = models.BooleanField(
+        default=False
+    )
     operational_status = models.ForeignKey(
         "OperationalStatus",
         models.SET_NULL,
@@ -31,7 +37,10 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
-    launch_date = models.DateTimeField()
+    launch_date = models.DateTimeField(
+        blank=True,
+        null=True
+    )
     launch_site = models.ForeignKey(
         "LaunchSite",
         models.SET_NULL,
@@ -42,16 +51,31 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
-    orbital_period = models.PositiveIntegerField()
-    inclination = models.DecimalField(
-        max_digits=5,
-        decimal_places=2
+    orbital_period = models.DecimalField(
+        max_digits=6,
+        decimal_places=1,
+        blank=True,
+        null=True
     )
-    apogee = models.PositiveIntegerField()
-    perigee = models.PositiveIntegerField()
+    inclination = models.DecimalField(
+        max_digits=4,
+        decimal_places=1,
+        blank=True,
+        null=True
+    )
+    apogee = models.PositiveIntegerField(
+        blank=True,
+        null=True
+    )
+    perigee = models.PositiveIntegerField(
+        blank=True,
+        null=True
+    )
     radar_cross_section = models.DecimalField(
         max_digits=7,
-        decimal_places=4
+        decimal_places=4,
+        blank=True,
+        null=True
     )
     orbital_status = models.ForeignKey(
         "OrbitalStatus",
