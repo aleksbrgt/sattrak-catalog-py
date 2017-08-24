@@ -89,7 +89,7 @@ class TLE(models.Model):
     )
     revolution_number = models.PositiveIntegerField()
     second_checksum = models.PositiveSmallIntegerField()
-    date_added = models.DateTimeField(
+    added = models.DateTimeField(
         null=True
     )
 

@@ -16,11 +16,11 @@ class TLEManager(models.Manager):
 
         tle = self.filter(
                 models.Q(
-                    date_added__lte=time
+                    added__lte=time
                 ),
                 satellite_number=catalogEntry
             ).order_by(
-                '-date_added',
+                '-added',
             )[0]
 
         return tle

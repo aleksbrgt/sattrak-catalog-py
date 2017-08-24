@@ -83,6 +83,12 @@ class CatalogEntry(models.Model):
         blank=True,
         null=True
     )
+    added = models.DateTimeField(
+        null=True
+    )
+    updated = models.DateTimeField(
+        null=True
+    )
 
     def __str__(self):
         return self.international_designator

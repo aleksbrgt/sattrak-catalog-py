@@ -66,7 +66,7 @@
             "mean_motion": 15.53566099,
             "revolution_number": 2775,
             "second_checksum": 0,
-            "date_added": "2016-11-10 01:00:53+00:00"
+            "added": "2016-11-10 01:00:53+00:00"
         }
     },
     {
@@ -96,7 +96,7 @@
             "mean_motion": 15.54476170,
             "revolution_number": 4486,
             "second_checksum": 2,
-            "date_added": "2017-02-28 12:51:53+00:00"
+            "added": "2017-02-28 12:51:53+00:00"
         }
     },
     {
@@ -126,7 +126,7 @@
             "mean_motion": 15.73368786,
             "revolution_number": 31082,
             "second_checksum": 2,
-            "date_added": "2017-02-28 21:45:13+00:00"
+            "added": "2017-02-28 21:45:13+00:00"
         }
     },
     {
@@ -156,7 +156,7 @@
             "mean_motion": 15.54478446,
             "revolution_number": 4490,
             "second_checksum": 9,
-            "date_added": "2017-02-28 22:47:12+00:00"
+            "added": "2017-02-28 22:47:12+00:00"
         }
     }
 ]

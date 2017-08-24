@@ -59,6 +59,8 @@ class CatalogEntrySerializer(serializers.ModelSerializer):
             'perigee',
             'radar_cross_section',
             'orbital_status',
+            'added',
+            'updated',
         )
 
 class TLESerializer(serializers.ModelSerializer):
@@ -92,6 +94,7 @@ class TLESerializer(serializers.ModelSerializer):
             'mean_motion',
             'revolution_number',
             'second_checksum',
+            'added',
         )
 
 class DataSourceSerializer(serializers.ModelSerializer):
@@ -100,6 +103,7 @@ class DataSourceSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'type',
+            'system_name',
             'name',
             'url',
             'comment',

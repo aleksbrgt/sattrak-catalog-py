@@ -26,7 +26,7 @@ class CatalogTestCase(TestCase):
         self.assertTrue(hasattr(TLE, 'third_line'))
 
     def test_tleHasDateAddedAttribute(self):
-        self.assertTrue(hasattr(TLE, 'date_added'))
+        self.assertTrue(hasattr(TLE, 'added'))
 
     def test_getValidTLEReturnsCorrectTLE(self):
         entry = CatalogEntry.objects.get(norad_catalog_number='25544')
