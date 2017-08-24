@@ -11,5 +11,18 @@
             "date_added": "2016-10-19 21:45:20+00:00",
             "last_time_checked": "2016-10-19 21:45:20+00:00"
         }
+    },
+    {
+        "model": "fetcher.DataSource",
+        "pk": 43,
+        "fields": {
+            "type": "TLE",
+            "name": "TEST TLE",
+            "system_name": "tle_test",
+            "url": "https://foobar.foobar/dummy_tle.txt",
+            "comment": "TEST TLE",
+            "date_added": "2016-10-19 21:45:20+00:00",
+            "last_time_checked": "2016-10-19 21:45:20+00:00"
+        }
     }
 ]

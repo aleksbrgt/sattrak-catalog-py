@@ -3,75 +3,83 @@ import time
 import tempfile
 import dateutil.parser
 
-from hurry.filesize import size
 from tqdm import tqdm
 from django.db import transaction
 from django.utils import timezone
 from django.core.management.base import BaseCommand, CommandError
 
 from fetcher.models import DataSource
-from fetcher.tools import SatcatParser
+from fetcher import tools
 
-from catalog.models import CatalogEntry, LaunchSite, OrbitalStatus, OperationalStatus, Source
+from catalog.models import CatalogEntry,LaunchSite, OrbitalStatus, \
+                           OperationalStatus, Source
 
 class Command(BaseCommand):
-    help = 'Update the satellite catalog'
+    help = 'Import SatCat from specified datasource'
 
     def add_arguments(self, parser):
+        """
+            Set command's arguments
+        """
         parser.add_argument('system_name', nargs='+', type=str)
 
     def handle(self, *args, **options):
+        """
+            Main function
+        """
         for system_name in options['system_name']:
             self.process_system_name(system_name)
 
-        self.stdout.write(self.style.SUCCESS('Successfully updated catalog entries'))
+        self.stdout.write(self.style.SUCCESS('Successfully imported catalog'))
 
     def process_system_name(self, system_name):
-        try:
-            source = DataSource.objects.get(system_name=system_name)
+        """
+            Finds and process a DataSource by its system name
+        """
+        if (system_name == "all"):
+            sources = DataSource.objects.filter(type=DataSource.CATALOG)
+        else:
+            sources = DataSource.objects.filter(
+                system_name=system_name,
+                type=DataSource.CATALOG
+            )
 
-            data = self.download(source.url)
-            self.parse(data.splitlines())
+        if not len(sources):
+            raise CommandError('DataSource "%s" does not exist' % system_name)
 
+        for source in sources:
             source.last_time_checked = timezone.now()
             source.save()
 
-        except(DataSource.DoesNotExist):
-            raise CommandError('DataSource "%s" does not exist' % system_name)
+            self.stdout.write(source.url)
+            data = tools.download(source.url)
+            if (data == False):
+                raise CommandError("File could not be downloaded")
+            self.parse(data.splitlines())
 
-    def download(self, url):
-        self.stdout.write(url)
-
-        r = requests.head(url)
-        r.raise_for_status()
-        content_size = int(r.headers['content-length'])
-
-        r = requests.get(url, stream=True)
-
-        with tqdm(desc="Downloading", total=content_size, unit='B', unit_scale=True) as t:
-            with tempfile.TemporaryFile() as temp:
-                for chunk in r.iter_content(chunk_size=1024):
-                    if chunk:
-                        temp.write(chunk)
-                        t.update(len(chunk))
-                temp.seek(0)
-                return temp.read()
-
-        raise CommandError("File could not be downloaded")
 
     @transaction.atomic
     def parse(self, lines):
-        parser = SatcatParser()
+        """
+            Loop through received file and parse its content
+        """
+        parser = tools.SatcatParser()
 
         for line in tqdm(lines, desc="Inserting  ", total=len(lines)):
             data = parser.parse_line(line)
             self.update(data)
 
     def update(self, data):
+        """
+            Update a catalog entry
+        """
         try:
-            entry = CatalogEntry.objects.get(norad_catalog_number=data['norad_catalog_number'])
+            entry = CatalogEntry.objects.get(
+                norad_catalog_number=data['norad_catalog_number']
+            )
         except CatalogEntry.DoesNotExist:
             entry = CatalogEntry()
+            entry.added = timezone.localtime(timezone.now())
 
         has_payload = False
         if data['has_payload'] == '*':
@@ -95,19 +103,25 @@ class Command(BaseCommand):
 
         operational_status = None
         try:
-            operational_status = OperationalStatus.objects.get(code=data['operational_status'])
+            operational_status = OperationalStatus.objects.get(
+                code=data['operational_status']
+            )
         except OperationalStatus.DoesNotExist:
             pass
 
         orbital_status = None
         try:
-            orbital_status = OrbitalStatus.objects.get(code=data['orbital_status'])
+            orbital_status = OrbitalStatus.objects.get(
+                code=data['orbital_status']
+            )
         except OrbitalStatus.DoesNotExist:
             pass
 
         launch_site = None
         try:
-            launch_site = LaunchSite.objects.get(code=data['launch_site'])
+            launch_site = LaunchSite.objects.get(
+                code=data['launch_site']
+            )
         except LaunchSite.DoesNotExist:
             pass
 
@@ -126,6 +140,7 @@ class Command(BaseCommand):
         entry.perigee = data['perigee']
         entry.radar_cross_section = data['radar_cross_section']
         entry.orbital_status = orbital_status
+        entry.updated = timezone.localtime(timezone.now())
 
         entry.save()
 

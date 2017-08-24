@@ -5,6 +5,8 @@ class SatcatParser():
     """
 
     CELESTRAK = 1
+
+    # Describe the CatalogEntries from Celestrak
     CELESTRAK_BP = {
         'international_designator': {
             'start': 0,
@@ -72,11 +74,10 @@ class SatcatParser():
         },
     }
 
-
     def __init__(self, format=CELESTRAK):
         self.format = format
 
-        if (self.format == SatcatParser.CELESTRAK):
+        if self.format == SatcatParser.CELESTRAK:
             self.structure = SatcatParser.CELESTRAK_BP
 
     def parse_line(self, line):
@@ -87,13 +88,13 @@ class SatcatParser():
         blacklist = ['N/A', '']
 
         exploded_line = {}
-        for element in self.structure:
-            start = self.structure[element]['start']
-            end = self.structure[element]['end']
+        for e in self.structure:
+            start = self.structure[e]['start']
+            end = self.structure[e]['end']
             value = line[start:end].strip()
 
             if value in blacklist:
                 value = None
 
-            exploded_line[element] = value
+            exploded_line[e] = value
         return exploded_line
