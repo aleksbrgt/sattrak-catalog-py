@@ -1,8 +1,17 @@
+certifi==2017.7.27.1
+chardet==3.0.4
+dateutils==0.6.6
 Django==1.10.3
 django-dotenv==1.4.1
 django-filter==1.0.2
 djangorestframework==3.5.3
 djangorestframework-filters==0.10.1
+idna==2.6
 pyephem==3.7.6.0
+python-dateutil==2.6.1
 pytz==2016.10
+requests==2.18.4
 selenium==2.53.6
+six==1.10.0
+tqdm==4.15.0
+urllib3==1.22
