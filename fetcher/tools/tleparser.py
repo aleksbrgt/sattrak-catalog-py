@@ -151,18 +151,24 @@ class TleParser:
         """
             Format a drag value from a raw value in a TLE to a readable number
         """
-        # Separate the two parts of iiiii-i
-        parts = raw_drag.split('-')
-        if (len(parts) == 1):
-            # If - not found, the drag is 0
-            return '0'
+        if raw_drag[0] == '-':
+            raw_drag = raw_drag[1:]
 
+        # Separate the two parts of iiiii-i
+        raw_drag = raw_drag.replace('+', '-')
+        parts = raw_drag.split('-')
         ending = parts[0]
-        power = parts[1]
+
+        power = 0
+        if (len(parts) != 1):
+            power = parts[1]
 
         # Generate zeros depending on size of the power
+        # try:
         zeros = ''.join(['0' for x in range(0, int(parts[1])-1)])
+        # except ValueError:
+            # return 0
 
         # Concatenate values, ending up with a value like 0.000iiiii
-        return '0.%s%s' % (zeros, ending)
+        return float('0.%s%s' % (zeros, ending))
 

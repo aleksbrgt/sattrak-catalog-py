@@ -51,7 +51,7 @@ class TleParserTestCase(TestCase):
             'epoch_day': '236.53358279',
             'first_derivative_mean_motion': '0.00001862',
             'second_derivative_mean_motion': '0',
-            'drag': '0.00035301',
+            'drag': 0.00035301,
             'set_number': '999',
             'first_checksum': '4',
             'line_2_full': '2 25544  51.6396  57.6070 0005086 172.6034 285.4459 15.54193317 72385',
@@ -95,7 +95,7 @@ class TleParserTestCase(TestCase):
             'epoch_day': '236.28392374',
             'first_derivative_mean_motion': '0.00000277',
             'second_derivative_mean_motion': '0',
-            'drag': '0',
+            'drag': 0,
             'set_number': '999',
             'first_checksum': '0',
             'line_2_full': '2 29155   0.0320 231.9245 0003315 245.6473 242.4487  1.00264274 41246',
@@ -115,3 +115,35 @@ class TleParserTestCase(TestCase):
         for n in expected:
             self.assertEquals(expected[n], data[n], n)
 
+    def test_format_drag_positive(self):
+        """
+            Test if the drag is correctly defined with a negative positive
+        """
+
+        value = "88849-3"
+        expected = 0.0088849
+
+        tle = TleParser()
+        self.assertEquals(expected, tle.format_drag(value))
+
+    def test_format_drag_negative(self):
+        """
+            Test if the drag is correctly defined with a negative positive
+        """
+
+        value = "-62555-3"
+        expected = 0.0062555
+
+        tle = TleParser()
+        self.assertEquals(expected, tle.format_drag(value))
+
+    def test_format_drag_zero(self):
+        """
+            Test if the drag is correctly defined with a negative positive
+        """
+
+        value = "00000+0"
+        expected = 0
+
+        tle = TleParser()
+        self.assertEquals(expected, tle.format_drag(value))
