@@ -142,5 +142,5 @@ class Command(BaseCommand):
         entry.orbital_status = orbital_status
         entry.updated = timezone.localtime(timezone.now())
 
-        entry.save()
-
+        if (entry.international_designator is not None):
+            entry.save()
