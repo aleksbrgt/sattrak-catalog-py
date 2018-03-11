@@ -66,7 +66,7 @@ class CatalogEntryViewSet(viewsets.ReadOnlyModelViewSet):
             )
 
             data = SatelliteComputation(tle)
-            data.set_observer_time(time)
+            data.observer.date = time
             data.basic_compute()
 
             return Response({

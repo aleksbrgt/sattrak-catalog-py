@@ -19,10 +19,10 @@ class SatelliteComputation():
         """
             Constructor
         """
-        self._observer = ephem.Observer()
-        self._observer.lat = '0'
-        self._observer.lon = '0'
-        self._observer.elevation =0
+        self.observer = ephem.Observer()
+        self.observer.lat = '0'
+        self.observer.lon = '0'
+        self.observer.elevation =0
 
         self._satellite = ephem.readtle(
                 tle.first_line,
@@ -38,35 +38,11 @@ class SatelliteComputation():
 
         return math.sqrt((SatelliteComputation.G * SatelliteComputation.EARTH_MASS) / r)
 
-    def set_observer_time(self, time):
-        """
-            Set the observer's time
-        """
-        self._observer.date = time
-
-    def set_observer_latitude(self, latitude):
-        """
-            Set the observer latitude
-        """
-        self._observer.lat = latitude
-
-    def set_observer_longitude(self, longitude):
-        """
-            Set the observer longitude
-        """
-        self._observer.lon = longitude
-
-    def set_observer_elevation(self, elevation):
-        """
-            Set the observer elevation
-        """
-        self._observer.elevatation = elevatation
-
     def basic_compute(self):
         """
             Compute basic data
         """
-        self._satellite.compute(self._observer)
+        self._satellite.compute(self.observer)
 
         self.longitude = math.degrees(self._satellite.sublong)
         self.latitude = math.degrees(self._satellite.sublat)

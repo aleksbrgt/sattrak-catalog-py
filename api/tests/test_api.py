@@ -60,7 +60,7 @@ class ApiGetTestCase(TestCase):
 
         for element in elements:
             # Dynamicly instanciate the view class
-            request = self.factory.get('/api/%s/?format=json' % element.lower())
+            request = self.factory.get('/api/v1/%s/?format=json' % element.lower())
             view_class = globals()['%sViewSet' % element]
             view = view_class.as_view({'get': 'list'})
             response = view(request).render()
@@ -79,7 +79,7 @@ class ApiGetTestCase(TestCase):
 
         for element in elements:
             # Dynamicly instanciate the view class
-            request = self.factory.get('/api/%s/?format=json' % element.lower())
+            request = self.factory.get('/api/v1/%s/?format=json' % element.lower())
             view_class = globals()['%sViewSet' % element]
             view = view_class.as_view({'get': 'list'})
             response = view(request).render()
@@ -101,7 +101,7 @@ class ApiGetTestCase(TestCase):
 
         for search, expected in expected_results.items():
             response = self.client.get(
-                '/api/catalogentry/{}'.format(search)
+                '/api/v1/catalogentry/{}'.format(search)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)
@@ -129,7 +129,7 @@ class ApiGetTestCase(TestCase):
 
         for field, value in to_check_basic.items():
             response = self.client.get(
-                '/api/catalogentry/?{}={}'.format(field, value)
+                '/api/v1/catalogentry/?{}={}'.format(field, value)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)
@@ -139,7 +139,7 @@ class ApiGetTestCase(TestCase):
 
         for field, value in to_check_child.items():
             response = self.client.get(
-                '/api/catalogentry/?{}={}'.format(field, value)
+                '/api/v1/catalogentry/?{}={}'.format(field, value)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)
@@ -160,7 +160,7 @@ class ApiGetTestCase(TestCase):
 
         for param, order in expected_orders.items():
             response = self.client.get(
-                '/api/catalogentry/?ordering={}'.format(param)
+                '/api/v1/catalogentry/?ordering={}'.format(param)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)
@@ -185,7 +185,7 @@ class ApiGetTestCase(TestCase):
 
         for search, expected in expected_results.items():
             response = self.client.get(
-                '/api/catalogentry/{}'.format(search)
+                '/api/v1/catalogentry/{}'.format(search)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)['results']
@@ -214,7 +214,7 @@ class ApiGetTestCase(TestCase):
 
         for search, expected in expected_results.items():
             response = self.client.get(
-                '/api/catalogentry/?search={}'.format(search)
+                '/api/v1/catalogentry/?search={}'.format(search)
             )
             content = response.content.decode('utf8')
             json_data = json.loads(content)['results']
@@ -236,18 +236,21 @@ class ComputationTestCase(ApiGetTestCase):
         'test_data',
     ]
 
+    # Time used for the tests, to avoid errors when the test TLE is too old
+    test_time = '20170825200000'
+
     def test_accessData(self):
         """
             Check if the route is working
         """
-        response = self.client.get('/api/catalogentry/25544/data/')
+        response = self.client.get('/api/v1/catalogentry/25544/data/?time=%s' % self.test_time)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_data_has_data(self):
         """
             Check if the page contains basic data
         """
-        response = self.client.get('/api/catalogentry/25544/data/')
+        response = self.client.get('/api/v1/catalogentry/25544/data/?time=%s' % self.test_time)
         content = response.content.decode('utf8')
         expected_data = [
             'object_elevation',
@@ -278,7 +281,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is before
             the TLE
         """
-        response = self.client.get('/api/catalogentry/25544/data/?time=20161109010000')
+        response = self.client.get('/api/v1/catalogentry/25544/data/?time=20161109010000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
@@ -292,7 +295,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is too far
             away from the TLE
         """
-        response = self.client.get('/api/catalogentry/25544/data/?time=21000101080000')
+        response = self.client.get('/api/v1/catalogentry/25544/data/?time=21000101080000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
@@ -305,7 +308,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if the request returns a correct JSON
         """
 
-        response = self.client.get('/api/catalogentry/25544/tle/?time=20170401080000')
+        response = self.client.get('/api/v1/catalogentry/25544/tle/?time=%s' % self.test_time)
         content = response.content.decode('utf8')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -317,7 +320,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if the request returns a TLE
         """
 
-        response = self.client.get('/api/catalogentry/25544/tle/?time=20170401080000')
+        response = self.client.get('/api/v1/catalogentry/25544/tle/?time=%s' % self.test_time)
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 

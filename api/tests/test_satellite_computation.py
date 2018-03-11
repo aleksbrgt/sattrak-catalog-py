@@ -28,6 +28,7 @@ class SatelliteComputationTestCase(TestCase):
 
         # Instanciate a computation with a dummy tle
         comp = SatelliteComputation(TLE.objects.first())
+        comp.observer.date = '2017/8/25 20:00:00'
         comp.basic_compute()
 
         for km in expected:
