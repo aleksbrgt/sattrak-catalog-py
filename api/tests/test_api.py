@@ -236,21 +236,21 @@ class ComputationTestCase(ApiGetTestCase):
         'test_data',
     ]
 
-    # Time used for the tests, to avoid errors when the test TLE is too old
-    test_time = '20170825200000'
-
     def test_accessData(self):
         """
             Check if the route is working
         """
-        response = self.client.get('/api/v1/catalogentry/25544/data/?time=%s' % self.test_time)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        response = self.client.get('/api/v1/compute/25544/')
+        self.assertIn(response.status_code, [
+            status.HTTP_200_OK,
+            status.HTTP_400_BAD_REQUEST,
+        ])
 
     def test_data_has_data(self):
         """
             Check if the page contains basic data
         """
-        response = self.client.get('/api/v1/catalogentry/25544/data/?time=%s' % self.test_time)
+        response = self.client.get('/api/v1/compute/25544/?time=20170825200000')
         content = response.content.decode('utf8')
         expected_data = [
             'object_elevation',
@@ -281,7 +281,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is before
             the TLE
         """
-        response = self.client.get('/api/v1/catalogentry/25544/data/?time=20161109010000')
+        response = self.client.get('/api/v1/compute/25544/?time=20161109010000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
@@ -295,7 +295,7 @@ class ComputationTestCase(ApiGetTestCase):
             Check if a query is not processed when the requested time is too far
             away from the TLE
         """
-        response = self.client.get('/api/v1/catalogentry/25544/data/?time=21000101080000')
+        response = self.client.get('/api/v1/compute/25544/?time=21000101080000')
         content = response.content.decode('utf8')
         json_data = json.loads(content)
 
