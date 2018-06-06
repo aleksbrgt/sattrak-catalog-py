@@ -4,7 +4,7 @@ from django.urls import reverse
 import ephem
 
 from catalog.models import TLE
-from api.tools.compute import SatelliteComputation
+from api.tools import SatelliteComputation
 
 class SatelliteComputationTestCase(TestCase):
 
