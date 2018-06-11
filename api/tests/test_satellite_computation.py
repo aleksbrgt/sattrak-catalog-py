@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.urls import reverse
 
 import ephem
 
@@ -193,8 +192,3 @@ class SatelliteComputationTestCase(TestCase):
         data = sc.compute()
 
         self.assertEquals(expected_data, data)
-
-
-
-
-

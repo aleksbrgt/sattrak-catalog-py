@@ -8,3 +8,4 @@ from .datasource import DataSourceViewSet
 from .tle import TLEViewSet
 from .source import SourceViewSet
 from .launchsite import LaunchSiteViewSet
+from .compute import ComputeView

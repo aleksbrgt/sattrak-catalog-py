@@ -14,13 +14,16 @@ class TLEManager(models.Manager):
 
         time = time.replace(tzinfo=pytz.UTC)
 
-        tle = self.filter(
+        tles = self.filter(
                 models.Q(
                     added__lte=time
                 ),
                 satellite_number=catalogEntry
             ).order_by(
                 '-added',
-            )[0]
+            )
 
-        return tle
+        if tles.exists():
+            return tles[0]
+
+        raise IndexError("No TLE found for the given time")

@@ -18,7 +18,6 @@ class SatelliteComputation(object):
     EARTH_MASS = 5.98e24
 
     def __init__(self, **kwargs):
-
         self.observer = ephem.Observer()
         self._satellite = None
 
@@ -26,7 +25,6 @@ class SatelliteComputation(object):
             raise TypeError("tle parameter is missing")
 
         tle = kwargs['tle']
-
         if type(tle) is not TLE:
             raise TypeError("tle must be of type TLE")
 
@@ -40,7 +38,6 @@ class SatelliteComputation(object):
             raise ValueError("invalid TLE")
 
     def _calc_orbital_velocity(self, altitude):
-
         try:
             float(altitude)
         except:
