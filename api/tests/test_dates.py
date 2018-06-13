@@ -3,7 +3,7 @@ from datetime import datetime
 from django.test import TestCase
 from django.urls import reverse
 
-from api.tools import dates
+from api.tools import date2fraction, fraction2date, format_inline_time
 
 class DatesTestCase(TestCase):
 
@@ -11,7 +11,6 @@ class DatesTestCase(TestCase):
         """
             Test the output of date2fraction
         """
-
         expected = {
             '20150101120000' : 0.5,
             '20150102120000' : 1.5,
@@ -19,8 +18,8 @@ class DatesTestCase(TestCase):
         }
 
         for inline_time in expected:
-            time = dates.format_inline_time(inline_time)
-            fraction = dates.date2fraction(time)
+            time = format_inline_time(inline_time)
+            fraction = date2fraction(time)
 
             self.assertEquals(fraction, expected[inline_time])
 
@@ -37,8 +36,8 @@ class DatesTestCase(TestCase):
         }
 
         for day in expected:
-            calc_time = dates.fraction2date(day)
-            time = dates.format_inline_time(expected[day])
+            calc_time = fraction2date(day)
+            time = format_inline_time(expected[day])
 
             self.assertTrue(
                 calc_time.month == time.month and

@@ -6,6 +6,9 @@ import calendar
 from datetime import datetime, timedelta
 
 def format_inline_time(inline_time):
+    if inline_time is None:
+        return datetime.utcnow()
+
     return datetime.strptime(inline_time, '%Y%m%d%H%M%S')
 
 def date2fraction(date):
